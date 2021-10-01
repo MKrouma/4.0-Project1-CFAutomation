@@ -1,0 +1,46 @@
+/* Le commentaire qui suit permet
+   de désactiver une règle */
+
+
+
+
+
+/* Page 1 : Cover 
+.cover {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.armoirie {
+    text-align: center;
+}
+
+
+.armoirie-logo { 
+    width: 100px; 
+    height: 100px; 
+    display: block; 
+    text-indent: -9999px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.afor-logo { 
+    width: 50px; 
+    height: 50px; 
+    display: block; 
+    text-indent: -9999px;
+    margin-left: auto;
+    margin-right: auto;
+}
+*/
+
+/* Page 2 : Report CF */
+#map { 
+    height: 600px; 
+    width: 1000px;
+}
+
+
+/* Page 3 : AOI Bounds */

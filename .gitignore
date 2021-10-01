@@ -1,0 +1,13 @@
+# ignore env
+/automation/env/
+
+# ignore database
+/database/
+
+# ignore sample
+/frontend/sample/
+
+
+# ignore pycache
+/backend/report_module/__pycache__
+
