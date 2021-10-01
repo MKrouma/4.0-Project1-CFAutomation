@@ -27,14 +27,14 @@ To use this project, you have to set up a virtual environnement.
 
 ### Create a venv env
 python -V\
-python -m venv env\
+python -m venv env
 
 Be sure to call your virtual environment as "env". Because we're using this in the 
 bash script. We can't change it later. Otherwise, change your env with env name in the
 bash script.
 
 ### Activate your virtual
-source env/bin/activate\
+source env/bin/activate
 
 ### Install requirements
 which pip (that's to verify that pip is running in your virtual env)\
