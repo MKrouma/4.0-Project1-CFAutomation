@@ -40,6 +40,11 @@ source env/bin/activate
 which pip (that's to verify that pip is running in your virtual env)
 pip install -r automation/requirements_dev.txt
 
+#### Create new git branch and push 
+git checkout -b YOUR_NAME_DEV_BRANCH (YOUR_NAME to change)
+git add .
+git commit -m "message"
+git push -u origin YOUR_NAME_DEV_BRANCH
 
 ## How to use 
 To use you just have to in 'automation/staging' folder and run create_pdf_report.sh bash script. 
