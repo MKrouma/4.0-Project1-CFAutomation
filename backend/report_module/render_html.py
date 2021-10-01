@@ -42,8 +42,8 @@ TEMPLATE_FILE = "report2.html"
 template = templateEnv.get_template(TEMPLATE_FILE)
 
 # change os dir
-os.chdir(search_path)
-print(f"new chdir {search_path}")
+# os.chdir(search_path)
+# print(f"new chdir {search_path}")
 
 # render template
 outputText = template.render(
