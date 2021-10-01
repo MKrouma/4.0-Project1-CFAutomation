@@ -3,27 +3,18 @@
 ## Description
 
 
-
 ## Table of content
 ### Automation 
-One code running. 
-Contains staging code : bash script
-Virtual environnement
-Test folder to test 
-
 ### Backend 
-Python code.
-
 ### Databse 
-Data folder.
-To transform in a all database later.
-
 ### Frontend 
-Html templates
-Statics : css, js, img
+
 
 ## How to install
 To use this project, you have to set up a virtual environnement. 
+
+### Staging directory
+cd automation/staging
 
 ### Create a venv env
 python -V\
@@ -46,6 +37,7 @@ git add .\
 git commit -m "message"\
 git push -u origin YOUR_NAME_DEV_BRANCH
 
+
 ## How to use 
 To use you just have to in 'automation/staging' folder and run create_pdf_report.sh bash script. 
 
@@ -58,7 +50,14 @@ i.e : "/Users/mac/Documents/PROJET/4.0-Project1-CFAutomation/frontend/statics/cs
 change : "{YOUR_ABS_PATH}/frontend/statics/css/report2.css">\
 --> Do that also for armoirie-logo and afor-logo in html body.
 
-###
+### run bash_script (in automation/staging directory)
+bash create_pdf_report.sh 
+
+### Result
+--> frontend/templates/report2.html : run it in your browser to see how it's looking.
+--> backend/report_deliverable/report_deliv.html : show how the html file is looking with jinja rendering.
+--> backend/report_deliverable/report_deliv.html : show how the final pdf report should look. A lot of things to change.
+
 
 ## License
 Ya pas license ici ! 
