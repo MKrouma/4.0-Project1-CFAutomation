@@ -46,14 +46,14 @@ To use you just have to in 'automation/staging' folder and run create_pdf_report
 Until the code is in production, we have some things to change right now. 
 
 ### frontend/templates/report2.html
---> go to \
+--> go to frontend/templates/report2.html\
 --> change the dirname path with your absolute path.\
 i.e : "/Users/mac/Documents/PROJET/4.0-Project1-CFAutomation/frontend/statics/css/report2.css">\
 change : "{YOUR_ABS_PATH}/frontend/statics/css/report2.css">\
 --> Do that also for armoirie-logo and afor-logo in html body.
 
 ### run bash_script (in automation/staging directory)
-bash create_pdf_report.sh 
+bash create_pdf_report.sh\
 -- windows : create_pdf_report.bat
 
 ### Result
