@@ -25,10 +25,12 @@ bash script. We can't change it later. Otherwise, change your env with env name 
 bash script.
 
 ### Activate your virtual
-source env/bin/activate
+source env/bin/activate\
+-- windows : env/bin/activate
 
 ### Install requirements
 which pip (that's to verify that pip is running in your virtual env)\
+-- windows : where pip\
 pip install -r automation/requirements_dev.txt
 
 ### Create new git branch and push 
@@ -52,6 +54,7 @@ change : "{YOUR_ABS_PATH}/frontend/statics/css/report2.css">\
 
 ### run bash_script (in automation/staging directory)
 bash create_pdf_report.sh 
+-- windows : create_pdf_report.bat
 
 ### Result
 --> frontend/templates/report2.html : run it in your browser to see how it's looking.
