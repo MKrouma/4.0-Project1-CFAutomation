@@ -10,8 +10,9 @@
 ### Frontend 
 
 
-## How to install
-To use this project, you have to set up a virtual environnement. 
+## How to run
+Get this project from Github and clone it.
+`git clone https://github.com/MKrouma/4.0-Project1-CFAutomation.git`
 
 ### Staging directory
 cd automation/staging
@@ -40,7 +41,7 @@ git commit -m "message"\
 git push -u origin YOUR_NAME_DEV_BRANCH
 
 
-## How to use 
+## Run
 To use you just have to in 'automation/staging' folder and run create_pdf_report.sh bash script. 
 
 Until the code is in production, we have some things to change right now. 
@@ -62,5 +63,5 @@ bash create_pdf_report.sh\
 --> backend/report_deliverable/report_deliv.html : show how the final pdf report should look. A lot of things to change.
 
 
-## License
-Ya pas license ici ! 
+## Author
+4.0 Team 
