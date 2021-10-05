@@ -11,7 +11,7 @@
 
 
 ## How to run
-Get this project from Github and clone it.
+Get this project from Github and clone it.\
 `git clone https://github.com/MKrouma/4.0-Project1-CFAutomation.git`
 
 ### Staging directory
