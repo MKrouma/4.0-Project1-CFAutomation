@@ -18,7 +18,6 @@ git clone https://github.com/MKrouma/4.0-Project1-CFAutomation.git
 
 
 ### Create a virtual environment
-This can be done with 
 ```
 python -m venv env
 ```
@@ -56,7 +55,7 @@ git checkout -b {YOUR_NAME}_dev_branch
 ```
 bash create_pdf_report.sh
 ```
-or
+or (for Windows users)
 ```
 create_pdf_report.bat
 ```
