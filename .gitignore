@@ -1,5 +1,5 @@
-# ignore env
-/automation/env/
+# ignore virtual env
+/env/
 
 # ignore database
 /database/
