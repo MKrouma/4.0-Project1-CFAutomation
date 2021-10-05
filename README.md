@@ -15,6 +15,9 @@ Clone project and go later to project folder.
 ```
 git clone https://github.com/MKrouma/4.0-Project1-CFAutomation.git
 ```
+```
+cd 4.0-Project1-CFAutomation
+```
 
 
 ### Create a virtual environment
