@@ -11,11 +11,17 @@ Project to automate map production for PAMOFOR.
 
 ## How to run
 ### Clone project
-`git clone https://github.com/MKrouma/4.0-Project1-CFAutomation.git`\
-Then, go to project folder.
+Clone project and go later to project folder.
+```
+git clone https://github.com/MKrouma/4.0-Project1-CFAutomation.git
+```
+
 
 ### Create a virtual environment
-This can be done with `python -m venv env`\
+This can be done with 
+```
+python -m venv env
+```
 
 ### Activate virtual environment with 
 ```
