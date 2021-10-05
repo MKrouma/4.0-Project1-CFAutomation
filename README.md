@@ -17,6 +17,7 @@ Then, go to project folder.
 
 ### Create a virtual environment
 This can be done with `python -m venv env`\
+
 Activate virtual environment with 
 
 ```
@@ -57,7 +58,7 @@ create_pdf_report.bat
 ```
 
 ## Result
-Go to deliverable folder and \
+Go to deliverable folder
 * check report_deliv.html
 * check report.pdf
 
