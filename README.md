@@ -1,13 +1,17 @@
 # 4.0-Team
 Project to automate map production for PAMOFOR.
 
-
-## Table of content
+## Project content
 * Backend 
 * Database
 * Deliverable
 * Frontend 
 
+## Table of content
+* How to run
+* Run 
+* Result
+* Author
 
 ## How to run
 ### Clone project
@@ -44,7 +48,7 @@ pip install -r requirements_dev.txt
 git checkout -b {YOUR_NAME}_dev_branch
 ```
 
-### Change manually some
+### Change manually some stuff
 * go the html file `frontend/templates/report2.html`
 * change css, armoirie-logo and afor-logo path
 ```
