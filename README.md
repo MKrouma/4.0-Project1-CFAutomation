@@ -21,7 +21,7 @@ Activate virtual environment with
 ```
 source env/bin/activate
 ```
-or
+or (for Windows users)
 ```
 env\Scripts\activate
 ```
@@ -33,14 +33,17 @@ pip install -r requirements_dev.txt
 
 ### Create new git branch for own developement. 
 ```
-git checkout -b YOUR_NAME_DEV_BRANCH (YOUR_NAME to change)
+git checkout -b {YOUR_NAME}_dev_branch (YOUR_NAME to change)
 ```
 
 ### Manual stuff to change
-* go the html file `frontend/templates/report2.html`\
+* go the html file `frontend/templates/report2.html`
 * change css, armoirie-logo and afor-logo path\
-** "{YOUR_ABS_PATH}/frontend/statics/css/report2.css">\
-** do again for armoirie-logo and afor-logo in html body
+```
+"{YOUR_ABS_PATH}/frontend/statics/css/report2.css"
+"{YOUR_ABS_PATH}/frontend/statics/img/armoirie_CI.png"
+"{YOUR_ABS_PATH}/frontend/statics/img/afor.jpeg"
+```
 
 ## Run
 ```
