@@ -1,5 +1,5 @@
 # 4.0-Team
-Project to automation map production for PAMOFOR.
+Project to automate map production for PAMOFOR.
 
 
 ## Table of content
@@ -11,7 +11,7 @@ Project to automation map production for PAMOFOR.
 
 ## How to run
 Get this project from Github and clone it.\
-`git clone https://github.com/MKrouma/4.0-Project1-CFAutomation.git`
+`git clone https://github.com/MKrouma/4.0-Project1-CFAutomation.git`\
 Then, go to project folder.
 
 ### Create a virtual environment
