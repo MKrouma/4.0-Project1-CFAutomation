@@ -41,7 +41,7 @@ pip install -r requirements_dev.txt
 git checkout -b {YOUR_NAME}_dev_branch
 ```
 
-### Manual stuff to change
+### Change manually some
 * go the html file `frontend/templates/report2.html`
 * change css, armoirie-logo and afor-logo path
 ```
