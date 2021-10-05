@@ -4,22 +4,28 @@
 
 
 ## Table of content
-* Automation 
 * Backend 
-* Databse 
+* Database
+* Deliverable
 * Frontend 
 
 
 ## How to run
 Get this project from Github and clone it.\
 `git clone https://github.com/MKrouma/4.0-Project1-CFAutomation.git`
+Then, go to project folder.
 
-### Staging directory
-cd automation/staging
+### Create a virtual environment
+This can be done with `python -m venv env`
+Activate virtual environment with 
 
-### Create a venv env
-python -V\
-python -m venv env
+```
+source env/bin/activate
+```
+or
+```
+env\Scripts\activate
+```
 
 Be sure to call your virtual environment as "env". Because we're using this in the 
 bash script. We can't change it later. Otherwise, change your env with env name in the
