@@ -4,13 +4,15 @@ import numpy as np
 import pandas as pd
 import geopandas as gpd
 from IPython.display import display
-
 import helper
-DATA_REL_PATH = "./../../database/data"
-sys.path.append("DATA_REL_PATH")
+
+# path 
+PROJ_ABS_PATH = os.path.dirname(os.getcwd())
+DATA_ABS_PATH = os.path.join(PROJ_ABS_PATH, "database/data")
+sys.path.append(DATA_ABS_PATH)
 
 # read data
-field_data = os.path.join(DATA_REL_PATH, "raw/Polygo_BOHOUSSOU KOUAME CELESTIN.shp")
+field_data = os.path.join(DATA_ABS_PATH, "raw/Polygo_BOHOUSSOU KOUAME CELESTIN.shp")
 data = gpd.read_file(field_data)
 
 # get poly bounds
@@ -43,6 +45,10 @@ gdf["Distance"] = helper.calculate_dist(gdf)
 new_columns = ["Bornes", "X(m)", "Y(m)", "Distance(m)"]
 gdf = gdf.rename(columns={"X":"X(m)", "Y":"Y(m)", "Distance":"Distance(m)"})
 
+# save brut bounds with local EPSG
+bounds_raw_file = os.path.join(DATA_ABS_PATH, "raw/" + os.path.split(field_data)[-1].replace(".shp", "_bounds.shp").replace(" ", "_"))
+gdf.to_file(bounds_raw_file)
+
 # change crs
 gdf.set_crs("epsg:32630", inplace=True)
 gdf.to_crs("epsg:4326", inplace=True)
@@ -55,12 +61,12 @@ display(gdf)
 
 # save as geojson
 bounds_file = "field_bounds.geojson"
-bounds_file = os.path.join(DATA_REL_PATH, "temp/"+bounds_file)
+bounds_file = os.path.join(DATA_ABS_PATH, "temp/" + bounds_file)
 bounds_geojson = gdf.copy()
 bounds_geojson.to_file(bounds_file, driver='GeoJSON')
 
 # save original data as js too
 data_geojson = data.to_crs("epsg:4326")
 data_file = "field_data.geojson"
-data_file = os.path.join(DATA_REL_PATH, "temp/"+data_file)
+data_file = os.path.join(DATA_ABS_PATH, "temp/" + data_file)
 data_geojson.to_file(data_file, driver='GeoJSON')

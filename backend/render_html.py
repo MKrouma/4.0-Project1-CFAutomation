@@ -5,10 +5,10 @@ import pandas as pd
 import geopandas as gpd
 from IPython.display import display
 # path 
-PROJ_ABS_PATH = os.path.split((os.path.split(os.getcwd())[0]))[0]
+PROJ_ABS_PATH = os.path.dirname(os.getcwd())
 DATA_ABS_PATH = os.path.join(PROJ_ABS_PATH, "database/data")
 TEMPLATE_ABS_PATH = os.path.join(PROJ_ABS_PATH, "frontend/templates")
-DELIVERABLE_REL_PATH = os.path.join(PROJ_ABS_PATH, "backend/report_deliverable")
+DELIVERABLE_REL_PATH = os.path.join(PROJ_ABS_PATH, "deliverable")
 sys.path.append(TEMPLATE_ABS_PATH)
 
 # read data
@@ -18,6 +18,12 @@ print("\n")
 print("data loading ...")
 display(data)
 display(data.columns)
+
+# read bounds data
+bounds_data = os.path.join(DATA_ABS_PATH, "raw/" + os.path.split(field_data)[-1].replace(".shp", "_bounds.shp").replace(" ", "_"))
+bounds = gpd.read_file(bounds_data)
+keep_cols = ["Bornes", "X(m)", "Y(m)", "Distance(m"]
+bounds_dict = bounds[keep_cols].to_dict(orient="index")
 
 # template variables
 id = data.loc[0, "id"]
@@ -52,7 +58,8 @@ outputText = template.render(
     info_village=village, info_dossier=dossier,
     info_demandeur=demandeur, info_CF=CF,
     info_idufci=IDUFCI, info_tf=TF, 
-    info_etablissement=date_etablissement, info_edition=date_edition)
+    info_etablissement=date_etablissement, info_edition=date_edition,
+    bounds_dict=bounds_dict)
 
 report_html = os.path.join(DELIVERABLE_REL_PATH, "report_deliv.html")
 with open(report_html, "w+") as report:

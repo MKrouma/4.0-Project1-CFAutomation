@@ -9,5 +9,5 @@
 
 
 # ignore pycache
-/backend/report_module/__pycache__
+/backend/__pycache__/
 
