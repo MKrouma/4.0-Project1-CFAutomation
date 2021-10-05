@@ -18,8 +18,7 @@ Then, go to project folder.
 ### Create a virtual environment
 This can be done with `python -m venv env`\
 
-Activate virtual environment with 
-
+### Activate virtual environment with 
 ```
 source env/bin/activate
 ```
