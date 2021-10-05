@@ -10,9 +10,8 @@ Project to automate map production for PAMOFOR.
 
 
 ## How to run
-Get this project from Github and clone it.\
+### Clone project
 `git clone https://github.com/MKrouma/4.0-Project1-CFAutomation.git`\
-
 Then, go to project folder.
 
 ### Create a virtual environment
@@ -32,7 +31,7 @@ env\Scripts\activate
 pip install -r requirements_dev.txt
 ```
 
-### Create new git branch for own developement. 
+### Create new git branch
 ```
 git checkout -b {YOUR_NAME}_dev_branch
 ```
