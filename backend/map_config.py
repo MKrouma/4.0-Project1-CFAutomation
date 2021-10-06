@@ -1,17 +1,19 @@
 import os
 import sys
 import json
+import helper
 import pandas as pd
 import geopandas as gpd
 from IPython.display import display
 
 # map configurations
-# data path 
-DATA_REL_PATH = "./../../database/data"
-sys.path.append("DATA_REL_PATH")
+# path 
+PROJ_ABS_PATH = os.path.dirname(os.getcwd())
+DATA_ABS_PATH = os.path.join(PROJ_ABS_PATH, "database/data")
+sys.path.append(DATA_ABS_PATH)
 
 # data
-bounds_file = os.path.join(DATA_REL_PATH, "temp/field_data.geojson")
+bounds_file = os.path.join(DATA_ABS_PATH, "temp/field_data.geojson")
 bounds = gpd.read_file(bounds_file)
 
 # center
@@ -27,9 +29,14 @@ display(center)
 # map config
 map_config = dict()
 map_config["center"] = center
+map_config["zoom_level"] = 16 #to automate
+map_config["zoom_controller"] = "topleft"
 
 
 # save map config
-map_config_file = os.path.join(DATA_REL_PATH, "map/map_config.json")
+map_config_file = os.path.join(DATA_ABS_PATH, "map/map_config.json")
 with open(map_config_file, 'w') as fp:
     json.dump(map_config, fp)
+
+# transform to js
+js_path = helper.transform_geojson_to_js(map_config_file,"var map_config = ")

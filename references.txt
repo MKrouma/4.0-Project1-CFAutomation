@@ -1,0 +1,12 @@
+# template formatting with jinja
+link : https://jinja.palletsprojects.com/en/3.0.x/templates/
+
+# converting pandas dataframe to dict in list order
+https://pythontic.com/pandas/serialization/dictionary
+
+# read json local file in javascript
+https://stackoverflow.com/questions/19706046/how-to-read-an-external-local-json-file-in-javascript
+
+# add string at the beginning of file
+https://stackoverflow.com/questions/5914627/prepend-line-to-beginning-of-a-file
+
