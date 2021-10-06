@@ -1,8 +1,8 @@
 // map class initialize
-var map = L.map('map').setView([map_config["center"]["lat"], 
+var map = L.map('map', { zoomControl: false }).setView([map_config["center"]["lat"], 
                                 map_config["center"]["lon"]], 
                                 map_config["zoom_level"]);
-map.zoomControl.setPosition(map_config["zoom_controller"]);
+// map.zoomControl.setPosition(map_config["zoom_controller"]);
 L.control.scale({ imperial: false}).addTo(map);
 
 // add osm and google satellite basemap
