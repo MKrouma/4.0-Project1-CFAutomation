@@ -70,3 +70,7 @@ data_geojson = data.to_crs("epsg:4326")
 data_file = "field_data.geojson"
 data_file = os.path.join(DATA_ABS_PATH, "temp/" + data_file)
 data_geojson.to_file(data_file, driver='GeoJSON')
+
+# transform geojson to js for Leaflet layers
+js_path = helper.transform_geojson_to_js(data_file,"var field_data = ")
+js_path = helper.transform_geojson_to_js(bounds_file,"var field_bounds = ")

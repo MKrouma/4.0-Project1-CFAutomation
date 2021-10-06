@@ -1,6 +1,8 @@
 // map class initialize
-var map = L.map('map').setView([6.75533, -4.53000], 16);
-map.zoomControl.setPosition("topleft")
+var map = L.map('map').setView([map_config["center"]["lat"], 
+                                map_config["center"]["lon"]], 
+                                map_config["zoom_level"]);
+map.zoomControl.setPosition(map_config["zoom_controller"]);
 
 // add osm and google satellite basemap
 // var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');

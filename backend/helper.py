@@ -69,3 +69,22 @@ def geometry_collection(list_objects):
 # create MultiPolygon
 def multipolygon(list_objects):
     return MultiPolygon(list_objects) 
+
+
+# tarnsform data from geojson to js
+def transform_geojson_to_js(geojson_path,string):
+    with open(geojson_path,'r') as f:
+
+        # variables
+        gejson_dirname = os.path.dirname(geojson_path)
+        gejson_basename = os.path.basename(geojson_path)
+        gejson_extension = gejson_basename.split(".")[-1]
+
+        # transform
+        js_path = os.path.join(gejson_dirname, 
+        gejson_basename.replace(gejson_extension, "js"))
+        
+        with open(js_path,'w') as f2: 
+            f2.write(string)
+            f2.write(f.read())
+    return js_path
