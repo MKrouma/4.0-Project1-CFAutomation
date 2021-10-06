@@ -10,3 +10,9 @@ https://stackoverflow.com/questions/19706046/how-to-read-an-external-local-json-
 # add string at the beginning of file
 https://stackoverflow.com/questions/5914627/prepend-line-to-beginning-of-a-file
 
+# mapbox static mapbox
+https://github.com/mapbox/mapbox-cli-py#staticmap
+
+# planet API
+
+# google static map

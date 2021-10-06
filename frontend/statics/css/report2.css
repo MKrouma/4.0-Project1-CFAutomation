@@ -64,10 +64,14 @@
 }
 
 /* ****************left************************** */
+.iterm-p{
+    padding: 5px;
+}
 .left{
     flex-basis: 20%;
     height: 100vh;
 }
+
 .left .iterm{
     border: 1px solid black;
     margin: 5px;
@@ -110,13 +114,20 @@
     border-color: gray;
     box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.5);
 }
+.iterm--1--right{
+    text-align: center;
+    font-size: 14px;
+    padding: 5px;
+}
 table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-left: 5px;
+    font-size: 14px;
 }
 
 th, td {
-  padding: 2px;
+    padding: 2px;
 }
 
 
@@ -140,6 +151,7 @@ th, td {
 .iterm--1--right{
     margin-top: 5px;
     margin-bottom: 5px;
+    margin-left: 5px;
     flex-basis: 20%;
     border: 1px solid black;
     box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.5);
