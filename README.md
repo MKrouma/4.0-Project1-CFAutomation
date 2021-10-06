@@ -1,12 +1,6 @@
 # 4.0-Team
 Project to automate map production for PAMOFOR.
 
-## Project content
-* Backend 
-* Database
-* Deliverable
-* Frontend 
-
 ## Table of content
 * How to run
 * Run 

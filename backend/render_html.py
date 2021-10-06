@@ -26,7 +26,7 @@ bounds = gpd.read_file(bounds_data)
 # round X, Y & Distance
 bounds["X(m)"] = bounds["X(m)"].apply(lambda x : round(x,2))
 bounds["Y(m)"] = bounds["Y(m)"].apply(lambda x : round(x,2))
-bounds["Distance(m"] = bounds["Distance(m"].apply(lambda x : round(float(x),3) if x!="N/A" else x)
+bounds["Distance(m"] = bounds["Distance(m"].apply(lambda x : round(float(x),3) if x!="N/A" else "")
 
 # transfrom to dict
 keep_cols = ["Bornes", "X(m)", "Y(m)", "Distance(m"]
