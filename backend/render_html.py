@@ -22,6 +22,13 @@ display(data.columns)
 # read bounds data
 bounds_data = os.path.join(DATA_ABS_PATH, "raw/" + os.path.split(field_data)[-1].replace(".shp", "_bounds.shp").replace(" ", "_"))
 bounds = gpd.read_file(bounds_data)
+
+# round X, Y & Distance
+bounds["X(m)"] = bounds["X(m)"].apply(lambda x : round(x,2))
+bounds["Y(m)"] = bounds["Y(m)"].apply(lambda x : round(x,2))
+bounds["Distance(m"] = bounds["Distance(m"].apply(lambda x : round(float(x),3) if x!="N/A" else "")
+
+# transfrom to dict
 keep_cols = ["Bornes", "X(m)", "Y(m)", "Distance(m"]
 bounds_dict = bounds[keep_cols].to_dict(orient="index")
 
