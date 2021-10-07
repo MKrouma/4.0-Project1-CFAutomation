@@ -49,7 +49,12 @@ git checkout -b {YOUR_NAME}_dev_branch
 <link rel="stylesheet" href="{YOUR_ABS_PATH}/frontend/statics/css/report2.css">
 <img src="{YOUR_ABS_PATH}/frontend/statics/img/armoirie_CI.png" alt="afor">
 <img src="{YOUR_ABS_PATH}/frontend/statics/img/afor.jpeg" alt="afor">
-
+```
+or (for Windows users)
+```
+<link rel="stylesheet" href="{YOUR_ABS_PATH}\frontend\statics\css\report2.css">
+<img src="{YOUR_ABS_PATH}\frontend\statics\img\armoirie_CI.png" alt="afor">
+<img src="{YOUR_ABS_PATH}\frontend\statics\img\afor.jpeg" alt="afor">
 ```
 
 ## Run
