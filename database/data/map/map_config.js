@@ -1,0 +1,1 @@
+var map_config = {"center": {"lat": 6.755331569175543, "lon": -4.530004939961217}, "zoom_level": 16, "zoom_controller": "topleft"}
