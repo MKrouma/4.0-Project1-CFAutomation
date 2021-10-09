@@ -19,3 +19,7 @@ https://github.com/mapbox/mapbox-cli-py#staticmap
 
 # install weasyprint
 https://github.com/Kozea/WeasyPrint/issues/971
+
+# solution from leaflet map to image or pdf export
+https://orenw.wordpress.com/2015/06/07/export-leaflet-map-to-image/
+Techno : Node (all is on server and not worker on browser. To develop later)

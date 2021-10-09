@@ -30,8 +30,21 @@ var g_sat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
 //     style: wdpa_style
 // });
 
+// bounds layer
+var bounds = new L.geoJson(field_bounds).addTo(map); 
+
 // field layer
 var field = new L.geoJson(field_data).addTo(map);
 
-// bounds layer
-var bounds = new L.geoJson(field_bounds).addTo(map); 
+// Use leaflet-image to save image
+leafletImage(map, function(err, canvas) {
+    // now you have canvas
+    // example thing to do with that canvas:
+    var img = document.createElement('img');
+    var dimensions = map.getSize();
+    img.width = dimensions.x;
+    img.height = dimensions.y;
+    img.src = canvas.toDataURL();
+    document.getElementById('map').innerHTML = '';
+    document.getElementById('map').appendChild(img);
+});
