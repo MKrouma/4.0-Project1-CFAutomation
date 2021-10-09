@@ -6,29 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Local CSS -->
-    <link rel="stylesheet" href="/Users/mac/Documents/PROJET/4.0-Project1-CFAutomation/frontend/statics/css/report2.css">
-    <!-- Css link --> 
+    <link rel="stylesheet" href="C:\Users\KoneNanwa\Desktop\KM\4.0-Project1-CFAutomation\frontend\statics\css\report2.css">
+    <!-- Css link -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
 
     <title>CF - Automation</title>
 
     <style type="text/css" media="print">
-        @page { 
+        @page {
             size: landscape;
         }
-        body { 
+        body {
             writing-mode: tb-rl;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        
+
         <!-- PROGRAMME -->
         <div class="nav">
             <div class="armoirie">
                 <div id="amoirie-img-var">
-                    <img src="/Users/mac/Documents/PROJET/4.0-Project1-CFAutomation/frontend/statics/img/armoirie_CI.png" alt="armoirie">
+                    <img src="C:\Users\KoneNanwa\Desktop\KM\4.0-Project1-CFAutomation\frontend\statics\img\amoirie_CI.png" alt="armoirie">
                 </div>
                 <div class="nav-armoirie">
                     <div>
@@ -37,7 +37,7 @@
                         <h5>Ministere de l'agriculture et du developpement durable</h5>
                     </div>
                 </div>
-                
+
             </div>
             <div class="programe">
                 <h5>PROGRAMME NATIONAL DE SECURISATION DU FONCIER RURAL</h5>
@@ -45,14 +45,14 @@
                 <h3>Carte de certificat foncier numero <span>{{ num_certif }}</span></h3>
             </div>
             <div class="logo">
-                <img src="/Users/mac/Documents/PROJET/4.0-Project1-CFAutomation/frontend/statics/img/afor-removebg.png" alt="afor">
+                <img src="C:\Users\KoneNanwa\Desktop\KM\4.0-Project1-CFAutomation\frontend\statics\img\afor-removebg.png" alt="afor">
             </div>
         </div>
 
 
         <!-- BODY -->
         <div class="body">
-            
+
             <!-- PLAN & GENERAL INFOS -->
             <div class="left">
                 <div class="iterm">
@@ -85,55 +85,55 @@
                         <div class="informations-generales">
                             <div>
                                 <p>
-                                    Nom du programme : 
+                                    Nom du programme :
                                     <span>{{info_programme}}</span>
                                 </p>
                                 <p>
-                                    Nom de la region : 
+                                    Nom de la region :
                                     <span>{{info_region}}</span>
                                 </p>
                                 <p>
-                                    Nom du departement : 
+                                    Nom du departement :
                                     <span>{{info_departement}}</span>
                                 </p>
                                 <p>
-                                    Nom de la sous-prefecture : 
+                                    Nom de la sous-prefecture :
                                     <span>{{info_sp}}</span>
                                 </p>
                                 <p>
-                                    Nom du village : 
+                                    Nom du village :
                                     <span>{{info_village}}</span>
                                 </p>
                                 <p>
-                                    N° Dossier de demande : 
+                                    N° Dossier de demande :
                                     <span>{{info_dossier}}</span>
                                 </p>
                                 <p>
-                                    Nom du demandeur : 
+                                    Nom du demandeur :
                                     <span>{{info_demandeur}}</span>
                                 </p>
                                 <p>
-                                    N° de CF : 
+                                    N° de CF :
                                     <span>{{info_CF}}</span>
                                 </p>
                                 <p>
-                                    N° IDUFCI : 
+                                    N° IDUFCI :
                                     <span>{{info_idufci}}</span>
                                 </p>
                                 <p>
-                                    N° TF : 
+                                    N° TF :
                                     <span>{{info_tf}}</span>
                                 </p>
                                 <p>
-                                    Date etablissement de carte : 
+                                    Date etablissement de carte :
                                     <span>{{info_etablissement}}</span>
                                 </p>
                                 <p>
-                                    Date edition de carte : 
+                                    Date edition de carte :
                                     <span>{{info_edition}}</span>
                                 </p>
                             </div>
-                            
+
                         </div>
                         <div class="info-generale-operateur">
                             <div class="left-item-operateur">
@@ -142,7 +142,7 @@
                                 </p>
                             </div>
                             <div class="g-tec-image">
-                                <img src="/Users/mac/Documents/PROJET/4.0-Project1-CFAutomation/frontend/statics/img/g-tec.png" alt="tec">
+                                <img src="C:\Users\KoneNanwa\Desktop\KM\4.0-Project1-CFAutomation\frontend\statics\img\g-tec.png" alt="tec">
                             </div>
 
                             <div class="left-item2-logo">
@@ -150,9 +150,9 @@
                                     <p>DIALLO SEKOU</p>
                                     <p>GEOMETRE EXPERT AGREE</p>
                                 </div>
-                                
+
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -174,7 +174,7 @@
                         <h5>ELLIPSOIDE WGS84 FUSEAU 30</h5>
                         <h5>PROJECTION DE MERCATOR TRANSVERSE UNIVERSELLE (UTM)</h5>
                     </div>
-                    
+
                 </div>
                 <div class="iterm--2--right">
                     <table>
@@ -195,16 +195,16 @@
                         {% endfor %}
                     </table>
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
 
     <!-- SCRIPTS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./../../database/data/temp/field_data.js"></script> 
-    <script src="./../../database/data/temp/field_bounds.js"></script> 
-    <script type="text/javascript" src="./../../database/data/map/map_config.js"></script>
-    <script src="./../statics/script/main.js"></script>
+    <script src=".\..\..\database\data\temp\field_data.js"></script>
+    <script src=".\..\..\database\data\temp\field_bounds.js"></script>
+    <script type="text\javascript" src=".\..\..\database\data\map\map_config.js"></script>
+    <script src=".\..\statics\script\main.js"></script>
 </body>
 </html>

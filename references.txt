@@ -16,3 +16,6 @@ https://github.com/mapbox/mapbox-cli-py#staticmap
 # planet API
 
 # google static map
+
+# install weasyprint
+https://github.com/Kozea/WeasyPrint/issues/971
