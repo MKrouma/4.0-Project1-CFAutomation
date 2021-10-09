@@ -20,7 +20,7 @@ echo
 
 # export
 echo "4. Export pdf."
-cd ../deliverable
+cd ..\deliverable
 weasyprint report_deliv.html report.pdf
 echo
 echo "report.pdf in deliverable with some warning, for sure :) !"
