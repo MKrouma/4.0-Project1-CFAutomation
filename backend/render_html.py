@@ -11,6 +11,9 @@ TEMPLATE_ABS_PATH = os.path.join(PROJ_ABS_PATH, "frontend/templates")
 DELIVERABLE_REL_PATH = os.path.join(PROJ_ABS_PATH, "deliverable")
 sys.path.append(TEMPLATE_ABS_PATH)
 
+# os
+OS = "LINUX"
+
 # read data
 field_data = os.path.join(DATA_ABS_PATH, "raw/Polygo_BOHOUSSOU KOUAME CELESTIN.shp")
 data = gpd.read_file(field_data)
@@ -51,7 +54,7 @@ date_edition       = "30/09/2021"
 search_path = TEMPLATE_ABS_PATH
 templateLoader = jinja2.FileSystemLoader(searchpath=search_path)
 templateEnv = jinja2.Environment(loader=templateLoader)
-TEMPLATE_FILE = "report2.html"
+TEMPLATE_FILE = "report_" + OS.lower() + ".html"
 template = templateEnv.get_template(TEMPLATE_FILE)
 
 # change os dir
