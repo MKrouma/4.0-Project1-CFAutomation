@@ -129,9 +129,9 @@ git commit -m "{YOUR_NAME} {ISSUE} {EXPLAIN} {STATUS} closed #{ISSUE_NUMBER}"
 
 * delete branch
 ```
-git delete -b {ISSUE_NUMBER}_{YOURNAME}_{Others}
+git delete -d {ISSUE_NUMBER}_{YOURNAME}_{Others}
 ```
 
-* something to share ?
-`Something interesting ? A stackoverflow solution or otehrs ?`
-`In references.txt, put description and solutio  link.`
+* something to share ?\
+`Something interesting ? A stackoverflow solution or otehrs ?`\
+`In references.txt, put description and solution  link.`
