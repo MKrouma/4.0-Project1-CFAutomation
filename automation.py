@@ -1,5 +1,6 @@
 import os
 
+print("Running automation in docker python env !")
 # os
 # OS_ENV = os.getenv(["OS"])
 OS_ENV = "Mac" # to-automate
