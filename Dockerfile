@@ -9,6 +9,8 @@ COPY . .
 
 # install dependencies
 RUN pip install -r requirements_dev.txt
+RUN apt-get install libpangocairo-1.0-0
 
 # command to run on container start
+CMD pwd
 CMD [ "python", "./automation.py" ]
