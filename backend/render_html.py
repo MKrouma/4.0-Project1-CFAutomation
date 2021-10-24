@@ -3,7 +3,7 @@ import sys
 import jinja2
 import pandas as pd
 import geopandas as gpd
-from IPython.display import display
+
 # path 
 PROJ_ABS_PATH = os.path.dirname(os.getcwd())
 DATA_ABS_PATH = os.path.join(PROJ_ABS_PATH, "database/data")
@@ -11,16 +11,13 @@ TEMPLATE_ABS_PATH = os.path.join(PROJ_ABS_PATH, "frontend/templates")
 DELIVERABLE_REL_PATH = os.path.join(PROJ_ABS_PATH, "deliverable")
 sys.path.append(TEMPLATE_ABS_PATH)
 
-# os
-OS = "LINUX"
-
 # read data
 field_data = os.path.join(DATA_ABS_PATH, "raw/Polygo_BOHOUSSOU KOUAME CELESTIN.shp")
 data = gpd.read_file(field_data)
 print("\n")
 print("data loading ...")
-display(data)
-display(data.columns)
+print(data)
+print(data.columns)
 
 # read bounds data
 bounds_data = os.path.join(DATA_ABS_PATH, "raw/" + os.path.split(field_data)[-1].replace(".shp", "_bounds.shp").replace(" ", "_"))
@@ -54,7 +51,7 @@ date_edition       = "30/09/2021"
 search_path = TEMPLATE_ABS_PATH
 templateLoader = jinja2.FileSystemLoader(searchpath=search_path)
 templateEnv = jinja2.Environment(loader=templateLoader)
-TEMPLATE_FILE = "report_" + OS.lower() + ".html"
+TEMPLATE_FILE = "report.html"
 template = templateEnv.get_template(TEMPLATE_FILE)
 
 # change os dir

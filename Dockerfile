@@ -8,6 +8,11 @@ WORKDIR /workspace
 COPY . .
 
 # install dependencies
-RUN pip install -r requirements_dev.txt
+RUN pip install -r requirements.txt
 RUN apt-get install libpangocairo-1.0-0
-RUN apt install python3-pip python3-cffi python3-brotli libpango-1.0-0 libharfbuzz0b libpangoft2-1.0-0
+
+EXPOSE 80
+
+# command to run on container start
+CMD pwd
+CMD [ "python", "./automation.py" ]
