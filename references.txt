@@ -23,3 +23,15 @@ https://github.com/Kozea/WeasyPrint/issues/971
 # solution from leaflet map to image or pdf export
 https://orenw.wordpress.com/2015/06/07/export-leaflet-map-to-image/
 Techno : Node (all is on server and not worker on browser. To develop later)
+
+# delete remote git branch
+git push origin --delete mamadou_dev_branch
+
+# build docker image
+docker build -t 40team .
+
+# run docker simple container
+docker run 40team -it /bin/bash 
+
+# run docker container with volumne (sharing directory)
+docker run -p 8888:8888 -it -v deliverable:/deliverable 40team /bin/bash
