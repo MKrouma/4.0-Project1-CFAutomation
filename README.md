@@ -8,7 +8,7 @@ Project to automate map production for PAMOFOR.
 
 
 ## Run
-### Clone project
+### clone project
 Clone project and go later to project folder.
 ```
 git clone https://github.com/MKrouma/4.0-Project1-CFAutomation.git
@@ -22,7 +22,7 @@ cd 4.0-Project1-CFAutomation
 docker build -t 40team .
 ```
 
-### Run docker image bash
+### run container terminal
 ```
 docker run -p 8888:8888 -it -v deliverable:/deliverable 40team /bin/bash
 ```
@@ -46,13 +46,13 @@ cd backend/bash
 bash create_pdf_report.sh
 ```
 
-### Check
+### check
 Go to deliverable folder : 
 * check report_deliv.html
 * check report.pdf
 
 
-### Collaboration (Git & Github)
+### collaboration (git & github)
 * Create new branch \
 `In container terminal :`
 ```
