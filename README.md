@@ -18,6 +18,7 @@ cd 4.0-Project1-CFAutomation
 ```
 
 ### build docker image
+install docker, run docker daemon
 ```
 docker build -t 40team .
 ```
@@ -36,7 +37,7 @@ python automation.py
 ```
 
 ### results
-`Inlocal terminal :`
+`In local terminal :`
 ```
 docker cp {CONTAINER_ID}:/workspace/deliverable .
 ```
@@ -84,5 +85,8 @@ git push origin --delete {ISSUE_NUMBER}_{YOURNAME}_{Others}
 * something to share ?\
 ```
 Something interesting ? A stackoverflow solution or otehrs ?
-In references.txt, put description and solution  link.
+In references.txt, put description and solution link.
+
+Description : code to run mapbox api without paying too much
+soluion : http://xxxxxxx.com?xxxxx
 ```
