@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# # activate virtual env
-# echo "1. Activate virtual env. "
-# source env/bin/activate
-# echo "virtual env created !"
-# echo
-# run map config
 cd ..
 echo "1. Run map configurations."
 python map_config.py
