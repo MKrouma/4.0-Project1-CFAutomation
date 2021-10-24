@@ -19,6 +19,6 @@ echo
 # export
 echo "3. Export pdf."
 cd ../deliverable
-weasyprint report_deliv.html report.pdf
+/usr/local/bin/weasyprint report_deliv.html report.pdf
 echo
 echo "report.pdf in deliverable with some warning, for sure :) !"

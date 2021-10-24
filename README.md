@@ -46,7 +46,11 @@ cd backend/bash
 bash create_pdf_report.sh
 ```
 
-### check
+### results
+`Run container and in local terminal :`
+```
+docker cp {CONTAINER_ID}:/workspace/deliverable .
+```
 Go to deliverable folder : 
 * check report_deliv.html
 * check report.pdf

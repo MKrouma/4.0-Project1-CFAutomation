@@ -11,6 +11,7 @@ COPY . .
 RUN pip install -r requirements.txt
 RUN apt-get install libpangocairo-1.0-0
 
+EXPOSE 80
 
 # command to run on container start
 CMD pwd

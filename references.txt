@@ -31,4 +31,4 @@ docker build -t 40team .
 docker run 40team -it /bin/bash 
 
 # run docker container with volumne (sharing directory)
-docker run -p 8888:8888 -it -v deliverable:/deliverable 40team /bin/bash
+docker run -p 8888:80 -it -v deliverable:/deliverable 40team /bin/bash
