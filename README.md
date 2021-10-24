@@ -2,12 +2,12 @@
 Project to automate map production for PAMOFOR.
 
 ## Table of content
-* Run
-* Manual
+* Installation
 * Development
+* Collaboration
 
 
-## Run
+## Installation
 ### clone project
 Clone project and go later to project folder.
 ```
@@ -24,17 +24,7 @@ docker build -t 40team .
 
 ### run container terminal
 ```
-docker run -p 8888:8888 -it -v deliverable:/deliverable 40team /bin/bash
-```
-
-## Manual
-* go the html file `frontend/templates/report_{YOUR_OS}.html`
-* change css, armoirie-logo, afor-logo and g-tec path
-```
-<link rel="stylesheet" href="{YOUR_ABS_PATH}/frontend/statics/css/report.css">
-<img src="{YOUR_ABS_PATH}/frontend/statics/img/armoirie_CI.png" alt="afor">
-<img src="{YOUR_ABS_PATH}/frontend/statics/img/afor.jpeg" alt="afor">
-<img src="{YOUR_ABS_PATH}\frontend\statics\img\g-tec.png" alt="afor">
+docker run -p 8888:80 -it -v deliverable:/deliverable 40team /bin/bash
 ```
 
 
@@ -56,13 +46,13 @@ Go to deliverable folder :
 * check report.pdf
 
 
-### collaboration (git & github)
-* Create new branch \
+## Collaboration (git & github)
+### create new branch 
 `In container terminal :`
 ```
 git checkout -b {ISSUE_NUMBER}_{YOURNAME}_{Others}
 ```
-* Do your development;
+### do your development
 * Add, commit and push your stuff
 ```
 git add file (or .)
@@ -74,6 +64,7 @@ git commit -m "{YOUR_NAME} {ISSUE} {EXPLAIN} {STATUS}"
 git push origin {ISSUE_NUMBER}_{YOURNAME}_{Others}
 ```
 
+### summit a pull request (PR)
 * Pull request and add Mamadou for assignment \
 `Go to Github, Pull request and create a new one`
 
@@ -88,6 +79,7 @@ git branch -D {ISSUE_NUMBER}_{YOURNAME}_{Others}
 git push origin --delete {ISSUE_NUMBER}_{YOURNAME}_{Others}
 ```
 
+### share information
 * something to share ?\
 `Something interesting ? A stackoverflow solution or otehrs ?`\
 `In references.txt, put description and solution  link.`
