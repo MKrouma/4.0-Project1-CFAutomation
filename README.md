@@ -126,3 +126,12 @@ git push origin {ISSUE_NUMBER}_{YOURNAME}_{Others}
 ```
 git commit -m "{YOUR_NAME} {ISSUE} {EXPLAIN} {STATUS} closed #{ISSUE_NUMBER}"
 ```
+
+* delete branch
+```
+git delete -d {ISSUE_NUMBER}_{YOURNAME}_{Others}
+```
+
+* something to share ?\
+`Something interesting ? A stackoverflow solution or otehrs ?`\
+`In references.txt, put description and solution  link.`

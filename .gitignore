@@ -4,7 +4,6 @@
 # ignore sample
 /frontend/sample/
 
-
 # ignore pycache
 /backend/__pycache__/
 
