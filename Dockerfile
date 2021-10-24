@@ -8,8 +8,8 @@ WORKDIR /workspace
 COPY . .
 
 # install dependencies
-RUN apt-get install libpangocairo-1.0-0
 RUN pip install -r requirements.txt
+RUN apt-get install libpangocairo-1.0-0
 
 
 # command to run on container start
