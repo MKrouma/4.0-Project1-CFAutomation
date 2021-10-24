@@ -4,7 +4,6 @@ import json
 import helper
 import pandas as pd
 import geopandas as gpd
-from IPython.display import display
 
 # map configurations
 # path 
@@ -22,7 +21,7 @@ center_lat = float(field_centroids.values.y)
 center_lon = float(field_centroids.values.x)
 center = dict()
 center["lat"], center["lon"] = center_lat, center_lon
-display(center)
+print(center)
 
 # scale
 
