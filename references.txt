@@ -24,6 +24,9 @@ https://github.com/Kozea/WeasyPrint/issues/971
 https://orenw.wordpress.com/2015/06/07/export-leaflet-map-to-image/
 Techno : Node (all is on server and not worker on browser. To develop later)
 
+# delete remote git branch
+git push origin --delete mamadou_dev_branch
+
 # build docker image
 docker build -t 40team .
 
