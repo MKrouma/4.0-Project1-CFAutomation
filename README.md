@@ -29,18 +29,19 @@ docker run -p 8888:80 -it -v deliverable:/deliverable 40team /bin/bash
 
 
 ## Development
-### run bash code
+### run automation
 `In container terminal :`
 ```
-cd backend/bash
-bash create_pdf_report.sh
+python automation.py
 ```
 
 ### results
-`Run container and in local terminal :`
+`Inlocal terminal :`
 ```
 docker cp {CONTAINER_ID}:/workspace/deliverable .
 ```
+`Subset : find container id with : docker container ls`
+
 Go to deliverable folder : 
 * check report_deliv.html
 * check report.pdf
@@ -48,7 +49,7 @@ Go to deliverable folder :
 
 ## Collaboration (git & github)
 ### create new branch 
-`In container terminal :`
+`In local terminal :`
 ```
 git checkout -b {ISSUE_NUMBER}_{YOURNAME}_{Others}
 ```
@@ -81,5 +82,7 @@ git push origin --delete {ISSUE_NUMBER}_{YOURNAME}_{Others}
 
 ### share information
 * something to share ?\
-`Something interesting ? A stackoverflow solution or otehrs ?`\
-`In references.txt, put description and solution  link.`
+```
+Something interesting ? A stackoverflow solution or otehrs ?
+In references.txt, put description and solution  link.
+```
