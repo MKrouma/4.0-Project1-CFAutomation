@@ -87,6 +87,8 @@ git push origin --delete {ISSUE_NUMBER}_{YOURNAME}_{Others}
 Something interesting ? A stackoverflow solution or otehrs ?
 In references.txt, put description and solution link.
 
+Exemple :
+---------
 Description : code to run mapbox api without paying too much
 soluion : http://xxxxxxx.com?xxxxx
 ```
