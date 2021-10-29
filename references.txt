@@ -29,3 +29,8 @@ git push origin --delete mamadou_dev_branch
 
 # generating static map with python code 
 link : https://www.manejandodatos.es/2015/07/generating-statics-maps-with-google-maps-and-python/
+
+# webkit2png : another solution to weasyprint
+https://stackoverflow.com/questions/52801417/html-to-pdf-with-correct-formatting-from-python
+
+

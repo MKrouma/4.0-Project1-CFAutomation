@@ -1,3 +1,32 @@
+@page {
+    size: letter landscape;
+    margin: 2cm;
+}
+
+body {
+    font-family: sans-serif;
+}
+@media print {
+    a::after {
+        content: " (" attr(href) ") ";
+    }
+    pre {
+        white-space: pre-wrap;
+    }
+    @page {
+        margin: 0.75in;
+        size: Letter;
+        @top-right {
+        content: counter(page);
+        }
+    }
+    @page :first {
+        @top-right {
+        content: "";
+        }
+    }
+}
+
 *{
     margin: 0px;
     padding: 0px;
