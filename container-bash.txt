@@ -6,3 +6,6 @@ docker run -p 8888:80 -it -v deliverable:/deliverable 40team
 
 # run container terminal
 docker run -p 8888:80 -it -v deliverable:/deliverable 40team /bin/bash
+
+# export result
+docker cp {CONTAINER_ID}:/workspace/deliverable .

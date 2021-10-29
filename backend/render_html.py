@@ -46,6 +46,7 @@ IDUFCI          = None
 TF              = None
 date_etablissement = "30/09/2021"
 date_edition       = "30/09/2021"
+gmap_image = "./../database/data/map/gm2img.png"
 
 # jinja env setting up
 search_path = TEMPLATE_ABS_PATH
@@ -66,6 +67,7 @@ outputText = template.render(
     info_demandeur=demandeur, info_CF=CF,
     info_idufci=IDUFCI, info_tf=TF, 
     info_etablissement=date_etablissement, info_edition=date_edition,
+    gmap_image=gmap_image,
     bounds_dict=bounds_dict)
 
 report_html = os.path.join(DELIVERABLE_REL_PATH, "report_deliv.html")
