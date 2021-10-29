@@ -10,6 +10,7 @@ cd ..
 # execute python code
 cd backend
 python render_html.py
+python static_map.py
 
 # export
 cd ../deliverable
