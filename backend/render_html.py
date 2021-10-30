@@ -46,7 +46,7 @@ IDUFCI          = None
 TF              = None
 date_etablissement = "30/09/2021"
 date_edition       = "30/09/2021"
-gmap_image = "./../database/data/map/gm2img.png"
+gmap_image = "./../database/data/map/img_mapbox.png"
 
 # jinja env setting up
 search_path = TEMPLATE_ABS_PATH
