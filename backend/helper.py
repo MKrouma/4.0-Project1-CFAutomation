@@ -90,8 +90,8 @@ def transform_geojson_to_js(geojson_path,string):
     return js_path
 
 # simplify geojson
-def simplifyGeojson() :
-    if not os.path.exists("./../database/data/temp/field_data_repaired.geojson") : 
+def simplifyGeojson(overwrite=False) :
+    if not os.path.exists("./../database/data/temp/field_data_repaired.geojson") or overwrite==True: 
         # current and temp directory
         c_dir = os.getcwd()
         temp_dir = os.path.join(os.path.dirname(os.getcwd()), "database/data/temp/")

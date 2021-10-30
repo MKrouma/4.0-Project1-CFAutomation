@@ -43,3 +43,5 @@ npm install -g simplify-geojson
 # transform geosjon with simplify-geojson
 cat field_data.geojson | simplify-geojson -t 0.001 > field_data_repaired123.geojson
 
+# simplestyle-spec : styling geospatial vector data
+link : https://github.com/mapbox/simplestyle-spec/tree/master/1.1.0
