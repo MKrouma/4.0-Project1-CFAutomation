@@ -48,3 +48,7 @@ link : https://docs.mapbox.com/api/maps/static-images/
 
 # simplestyle-spec : styling geospatial vector data
 link : https://github.com/mapbox/simplestyle-spec/tree/master/1.1.0
+
+# get geodataframe index as geodataframe
+link : https://github.com/geopandas/geopandas/issues/1051
+solution : gdf = gdf[[index]]

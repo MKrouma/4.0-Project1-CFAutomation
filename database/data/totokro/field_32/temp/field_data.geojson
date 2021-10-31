@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "OBJECTID": 185, "id": 1, "Superficie": 2.35693, "VILLAGE": "TOTOKRO", "NOM": "KOUAKOU YAO", "SOUS_PREF": "NOFOU", "DEPARTEMEN": "DIMBOKRO", "REGION": "N ZI", "V_NORD": null, "V_SUD": null, "V_EST": null, "V_OUEST": null, "CROQUIS": "0", "PROJET": "PAMOFOR", "OTA": "CGEDS", "X__m_": 0.0, "Y__m_": 0.0, "SOUS_PREF_": null, "X__m1": 0.0, "Y__m1": 0.0, "Shape_Leng": 721.32124186099998, "Shape_Area": 23569.0211002 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -4.615016086592421, 6.80523365313251 ], [ -4.613065585309978, 6.805080110026944 ], [ -4.612573318983944, 6.804774703412634 ], [ -4.612610475361533, 6.804422924468486 ], [ -4.61259369562919, 6.8043583534307 ], [ -4.613357140487567, 6.804495514565005 ], [ -4.613431919801554, 6.804273460919747 ], [ -4.614132065281605, 6.804253410615321 ], [ -4.615143164086556, 6.804408270451797 ], [ -4.615016086592421, 6.80523365313251 ] ] ] } }
+]
+}

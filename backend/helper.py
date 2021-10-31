@@ -135,4 +135,26 @@ def read_geojson(file) :
         gj = geojson.load(f)
     return gj
 
+# makedir func
+def mkdir(dir_path, dir_name) :
+    # dir abs path
+    dir = os.path.join(dir_path, dir_name)
+
+    if not os.path.exists(dir) :
+        os.makedirs(dir)
+        print(f"{dir} created !")
+    else : 
+        print(f"{dir} exists !")
+
+    return dir
+
+# utils function
+# get field raw and temp path
+def get_field_dir(data_path, geodata_dir, idx) :
+    field_raw_path = os.path.join(os.path.join(data_path, geodata_dir), f"field_{idx+1}/raw")
+    field_temp_path = os.path.join(os.path.join(data_path, geodata_dir), f"field_{idx+1}/temp")
+    field_map_path = os.path.join(os.path.join(data_path, geodata_dir), f"field_{idx+1}/map")
+    field_deliv_path = os.path.join(os.path.join(data_path, geodata_dir), f"field_{idx+1}/deliv")
+
+    return field_raw_path, field_temp_path, field_map_path, field_deliv_path
 

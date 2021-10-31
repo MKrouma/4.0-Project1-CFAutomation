@@ -1,0 +1,15 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "OBJECTID": 109, "Bornes": "B1", "lat": 6.8056838460631557, "lon": -4.6244240738170408 }, "geometry": { "type": "Point", "coordinates": [ -4.624424073817041, 6.805683846063156 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 109, "Bornes": "B2", "lat": 6.8051567989603914, "lon": -4.6248355769802485 }, "geometry": { "type": "Point", "coordinates": [ -4.624835576980248, 6.805156798960391 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 109, "Bornes": "B3", "lat": 6.8049736023858634, "lon": -4.6249616728400058 }, "geometry": { "type": "Point", "coordinates": [ -4.624961672840006, 6.804973602385863 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 109, "Bornes": "B4", "lat": 6.8041532589499214, "lon": -4.6252404414689856 }, "geometry": { "type": "Point", "coordinates": [ -4.625240441468986, 6.804153258949921 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 109, "Bornes": "B5", "lat": 6.8044462312910277, "lon": -4.6260218237138941 }, "geometry": { "type": "Point", "coordinates": [ -4.626021823713894, 6.804446231291028 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 109, "Bornes": "B6", "lat": 6.8047160718264195, "lon": -4.6260286843076628 }, "geometry": { "type": "Point", "coordinates": [ -4.626028684307663, 6.804716071826419 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 109, "Bornes": "B7", "lat": 6.805073578590652, "lon": -4.6255111780853788 }, "geometry": { "type": "Point", "coordinates": [ -4.625511178085379, 6.805073578590652 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 109, "Bornes": "B8", "lat": 6.8055225756958011, "lon": -4.6249913009596026 }, "geometry": { "type": "Point", "coordinates": [ -4.624991300959603, 6.805522575695801 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 109, "Bornes": "B9", "lat": 6.8056381300249775, "lon": -4.624512087638732 }, "geometry": { "type": "Point", "coordinates": [ -4.624512087638732, 6.805638130024978 ] } }
+]
+}
