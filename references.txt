@@ -34,3 +34,17 @@ link : https://www.manejandodatos.es/2015/07/generating-statics-maps-with-google
 https://stackoverflow.com/questions/52801417/html-to-pdf-with-correct-formatting-from-python
 
 
+# simplify geojson for mapbox
+link : https://www.npmjs.com/package/simplify-geojson
+install with npm : 
+pip install nodeenv
+npm install -g simplify-geojson
+
+# transform geosjon with simplify-geojson
+cat field_data.geojson | simplify-geojson -t 0.001 > field_data_repaired123.geojson
+
+# mapbox images static docker
+link : https://docs.mapbox.com/api/maps/static-images/
+
+# simplestyle-spec : styling geospatial vector data
+link : https://github.com/mapbox/simplestyle-spec/tree/master/1.1.0

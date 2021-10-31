@@ -88,3 +88,23 @@ def transform_geojson_to_js(geojson_path,string):
             f2.write(string)
             f2.write(f.read())
     return js_path
+
+# simplify geojson
+def simplifyGeojson(overwrite=False) :
+    if not os.path.exists("./../database/data/temp/field_data_repaired.geojson") or overwrite==True: 
+        # current and temp directory
+        c_dir = os.getcwd()
+        temp_dir = os.path.join(os.path.dirname(os.getcwd()), "database/data/temp/")
+
+        # change dir to temp
+        os.chdir(temp_dir)
+
+        # command line
+        cmd = "cat field_data.geojson | simplify-geojson -t 0.001 > field_data_repaired.geojson"
+        os.system(cmd)
+
+        # change dir to current
+        os.chdir(c_dir)
+
+        # print
+        print("field_data.geojson simply to field_data_repaired.geojson")
