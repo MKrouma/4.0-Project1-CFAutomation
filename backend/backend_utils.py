@@ -1,5 +1,6 @@
 import os
 import sys
+import json
 import helper
 import numpy as np
 import pandas as pd
@@ -121,6 +122,43 @@ def create_bounds(field_raw_path, field_temp_path, field_idx, to_js=False, overw
 
 
 ## 3. set map configurations utils
+# set map configurations functions
+def set_mapConfig(field_temp_path, field_map_path, to_js=False, overwrite=False):
+    # data
+    bounds_file = os.path.join(field_temp_path, "field_data.geojson")
+    bounds = gpd.read_file(bounds_file)
+    print(bounds)
+
+    # center
+    field_centroids = bounds.geometry.centroid
+    print(field_centroids)
+    center_lat = float(field_centroids.values.y)
+    center_lon = float(field_centroids.values.x)
+    center = dict()
+    center["lat"], center["lon"] = center_lat, center_lon
+    print(center)
+
+    # scale
+
+    # map config
+    map_config = dict()
+    map_config["center"] = center
+    map_config["zoom_level"] = 16 #to automate
+    map_config["zoom_controller"] = "topleft"
+
+
+    # save map config
+    map_config_file = os.path.join(field_map_path, "map_config.json")
+    if not os.path.exists(map_config_file) or overwrite==True:
+        with open(map_config_file, 'w') as fp:
+            json.dump(map_config, fp)
+        print(f"{map_config_file} created !")
+    else :
+        print(f"{map_config_file} exists !") 
+
+    # transform to js
+    if to_js :
+        js_path = helper.transform_geojson_to_js(map_config_file,"var map_config = ")
 
 
 
