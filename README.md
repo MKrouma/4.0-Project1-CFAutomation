@@ -92,3 +92,11 @@ Exemple :
 Description : code to run mapbox api without paying too much
 soluion : http://xxxxxxx.com?xxxxx
 ```
+
+
+## Backend process
+> create directories (/ shapefile) \
+> create boundaries (/ field) \
+> set map configurations (/ field) \
+> render static map (/ field) \
+> render html for (/field) 

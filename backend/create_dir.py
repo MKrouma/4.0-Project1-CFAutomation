@@ -1,10 +1,9 @@
 import os
 import geopandas as gpd
 from helper import mkdir
-
+from configuration import PROJECT_PATH
 
 # directory
-PROJECT_PATH = "/Users/mac/Documents/PROJET/4.0-Project1-CFAutomation"
 EXTERN_PATH = os.path.join(PROJECT_PATH, "database/extern")
 DATA_PATH = os.path.join(PROJECT_PATH, "database/data")
 
@@ -34,6 +33,7 @@ def dirGeoData(data_name, extern_path, data_path) :
         # create map, raw, temp subdirectories
         _ = mkdir(field_idx_dir, "map")
         _ = mkdir(field_idx_dir, "temp")
+        _ = mkdir(field_idx_dir, "deliv")
         _ = mkdir(field_idx_dir, "raw")
 
         # copy raw data
