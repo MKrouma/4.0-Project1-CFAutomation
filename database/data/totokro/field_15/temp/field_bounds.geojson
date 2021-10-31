@@ -2,10 +2,14 @@
 "type": "FeatureCollection",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "OBJECTID": 2, "Bornes": "B1", "lat": 6.8056003834538146, "lon": -4.6229295133151647 }, "geometry": { "type": "Point", "coordinates": [ -4.622929513315165, 6.805600383453815 ] } },
-{ "type": "Feature", "properties": { "OBJECTID": 2, "Bornes": "B2", "lat": 6.8053320609189649, "lon": -4.6227207588225268 }, "geometry": { "type": "Point", "coordinates": [ -4.622720758822527, 6.805332060918965 ] } },
-{ "type": "Feature", "properties": { "OBJECTID": 2, "Bornes": "B3", "lat": 6.8018992433385286, "lon": -4.6238983912711689 }, "geometry": { "type": "Point", "coordinates": [ -4.623898391271169, 6.801899243338529 ] } },
-{ "type": "Feature", "properties": { "OBJECTID": 2, "Bornes": "B4", "lat": 6.8020383719561188, "lon": -4.627200518845072 }, "geometry": { "type": "Point", "coordinates": [ -4.627200518845072, 6.802038371956119 ] } },
-{ "type": "Feature", "properties": { "OBJECTID": 2, "Bornes": "B5", "lat": 6.8023207006330804, "lon": -4.6273577468035549 }, "geometry": { "type": "Point", "coordinates": [ -4.627357746803555, 6.80232070063308 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 52, "Bornes": "B1", "lat": 6.8067016782007332, "lon": -4.6135593168502247 }, "geometry": { "type": "Point", "coordinates": [ -4.613559316850225, 6.806701678200733 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 52, "Bornes": "B2", "lat": 6.8070482676691295, "lon": -4.6144049390988755 }, "geometry": { "type": "Point", "coordinates": [ -4.614404939098876, 6.80704826766913 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 52, "Bornes": "B3", "lat": 6.8075702120689563, "lon": -4.6143288555204762 }, "geometry": { "type": "Point", "coordinates": [ -4.614328855520476, 6.807570212068956 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 52, "Bornes": "B4", "lat": 6.8088451137054191, "lon": -4.6149066013397029 }, "geometry": { "type": "Point", "coordinates": [ -4.614906601339703, 6.808845113705419 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 52, "Bornes": "B5", "lat": 6.8088477225715991, "lon": -4.6139197303315225 }, "geometry": { "type": "Point", "coordinates": [ -4.613919730331522, 6.808847722571599 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 52, "Bornes": "B6", "lat": 6.8083350877467774, "lon": -4.6133008830575397 }, "geometry": { "type": "Point", "coordinates": [ -4.61330088305754, 6.808335087746777 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 52, "Bornes": "B7", "lat": 6.8077909552952018, "lon": -4.6129805980710179 }, "geometry": { "type": "Point", "coordinates": [ -4.612980598071018, 6.807790955295202 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 52, "Bornes": "B8", "lat": 6.8073145715270797, "lon": -4.6130580466509308 }, "geometry": { "type": "Point", "coordinates": [ -4.613058046650931, 6.80731457152708 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 52, "Bornes": "B9", "lat": 6.8068349893241944, "lon": -4.6132295700873751 }, "geometry": { "type": "Point", "coordinates": [ -4.613229570087375, 6.806834989324194 ] } }
 ]
 }

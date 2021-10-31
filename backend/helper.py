@@ -148,3 +148,13 @@ def mkdir(dir_path, dir_name) :
 
     return dir
 
+# utils function
+# get field raw and temp path
+def get_field_dir(data_path, geodata_dir, idx) :
+    field_raw_path = os.path.join(os.path.join(data_path, geodata_dir), f"field_{idx+1}/raw")
+    field_temp_path = os.path.join(os.path.join(data_path, geodata_dir), f"field_{idx+1}/temp")
+    field_map_path = os.path.join(os.path.join(data_path, geodata_dir), f"field_{idx+1}/map")
+    field_deliv_path = os.path.join(os.path.join(data_path, geodata_dir), f"field_{idx+1}/deliv")
+
+    return field_raw_path, field_temp_path, field_map_path, field_deliv_path
+
