@@ -54,7 +54,7 @@ def save_image(provider, data, image_name, overwrite=False, format="png"):
 
 ################################### APPLICATION ################################
 # simplify-gejson
-simplifyGeojson(True)
+simplifyGeojson(False)
 
 # dataset
 with open("./../database/data/temp/field_data_repaired.geojson") as f:
@@ -90,4 +90,4 @@ provider =  "mapbox" #"mapbox" #"gmap"
 image_name = f"./../database/data/map/img_{provider}" 
 
 # function save 
-save_image(provider, data, image_name, True)
+save_image(provider, data, image_name, False)
