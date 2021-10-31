@@ -1,6 +1,7 @@
 # map automation modules helper
 # import
 import os
+import json
 import geojson
 import pandas as pd
 import geopandas as gpd
@@ -91,49 +92,40 @@ def transform_geojson_to_js(geojson_path,string):
     return js_path
 
 # simplify geojson
-def simplifyGeojson(parameter=0.001, type="data", overwrite=False) :
+def simplifyGeojson(temp_dir, parameter=[0.001,0.01], overwrite=False) :
     # current and temp directory
     c_dir = os.getcwd()
-    temp_dir = os.path.join(os.path.dirname(os.getcwd()), "database/data/temp/")
 
-    if type == "data" :
-        if not os.path.exists("./../database/data/temp/field_data_repaired.geojson") or overwrite==True: 
-            
-            # change dir to temp
-            os.chdir(temp_dir)
+    if not os.path.exists(os.path.join(temp_dir, "field_data_repaired.geojson")) or overwrite==True : 
+        
+        # change dir to temp
+        os.chdir(temp_dir)
 
-            # command line
-            cmd = f"cat field_data.geojson | simplify-geojson -t {parameter} > field_data_repaired.geojson"
-            os.system(cmd)
+        # simplify field_data
+        cmd = f"cat field_data.geojson | simplify-geojson -t {parameter[0]} > field_data_repaired.geojson"
+        os.system(cmd)
 
-            # change dir to current
-            os.chdir(c_dir)
+        # simplify field_bounds
+        cmd = F"cat field_bounds.geojson | simplify-geojson -t {parameter[1]} > field_bounds_repaired.geojson"
+        os.system(cmd)
 
-            # print
-            print("field_data.geojson simply to field_data_repaired.geojson")
+        # change dir to current
+        os.chdir(c_dir)
 
-    if type == "bounds" :
-        if not os.path.exists("./../database/data/temp/field_bounds_repaired.geojson") or overwrite==True: 
-            
-            # change dir to temp
-            os.chdir(temp_dir)
-
-            # command line
-            cmd = "cat field_bounds.geojson | simplify-geojson -t 0.001 > field_bounds_repaired.geojson"
-            os.system(cmd)
-
-            # change dir to current
-            os.chdir(c_dir)
-
-            # print
-            print("field_bounds.geojson simply to field_bounds_repaired.geojson")
-
+        # print
+        print("field_data & field_bounds simplified ")
 
 # read geojson file
 def read_geojson(file) :
     with open(file) as f:
         gj = geojson.load(f)
     return gj
+
+# read json
+def read_json(file) :
+    with open(file) as f:
+        data = json.load(f)
+    return data
 
 # makedir func
 def mkdir(dir_path, dir_name) :
@@ -158,3 +150,55 @@ def get_field_dir(data_path, geodata_dir, idx) :
 
     return field_raw_path, field_temp_path, field_map_path, field_deliv_path
 
+def create_url(provider, data_map, data_overview):
+    # provider temp URL
+    GMAP_URL = "https://maps.googleapis.com/maps/api/staticmap?center={},{}&zoom={}&size={}x{}&maptype=satellite&key={}"
+    MAPBOX_URL = "https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/geojson({})/{},{},{},0/{}x{}?access_token={}"
+    MAPBOX_URL2 = "https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/static/geojson({})/{},{},{},0/{}x{}?access_token={}"
+
+    # url map & overview
+    url_map = None
+    url_overview = None
+
+    # create curl for google map
+    if provider == "gmap" :
+        url_map = GMAP_URL.format(data_map["lat"], 
+                                data_map["lon"], 
+                                data_map["zoom"], 
+                                data_map["size_w"],
+                                data_map["size_h"],
+                                data_map["key"])  
+        
+        # overview
+        url_overview = GMAP_URL.format(data_overview["lat"], 
+                                    data_overview["lon"], 
+                                    data_overview["zoom"], 
+                                    data_overview["size_w"],
+                                    data_overview["size_h"],
+                                    data_overview["key"]) 
+
+    # create curl for mapbox
+    if provider == "mapbox" :
+        # map 
+        url_map = MAPBOX_URL.format(data_map["data_geojson"],
+                                data_map["lon"], 
+                                data_map["lat"], 
+                                data_map["zoom"], 
+                                data_map["size_w"],
+                                data_map["size_h"],
+                                data_map["key_mapbox"]) 
+        
+        # overview
+        url_overview = MAPBOX_URL2.format(data_overview["data_geojson"],
+                                        data_overview["lon"], 
+                                        data_overview["lat"], 
+                                        data_overview["zoom"], 
+                                        data_overview["size_w"],
+                                        data_overview["size_h"],
+                                        data_overview["key_mapbox"]) 
+
+
+    if provider not in ["gmap", "mapbox"] :
+        print("Enter a proper provider name")
+        
+    return url_map, url_overview

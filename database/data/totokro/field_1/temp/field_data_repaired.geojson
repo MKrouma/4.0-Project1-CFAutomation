@@ -1,0 +1,69 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "OBJECTID": 2,
+        "id": 6,
+        "Superficie": 9.26322,
+        "VILLAGE": "TOTOKRO",
+        "NOM": "AKPOUE KOUAKOU",
+        "SOUS_PREF": "DJANGOKRO",
+        "DEPARTEMEN": "DIMBOKRO",
+        "REGION": "N'ZI",
+        "V_NORD": "KOUAKOU KONAN MARTIN / N'GUESSAN KOFFI",
+        "V_SUD": "N'GUESSAN KOUASSI FRANKLIN",
+        "V_EST": "CIMETIERE",
+        "V_OUEST": null,
+        "CROQUIS": null,
+        "PROJET": null,
+        "OTA": null,
+        "X__m_": 0,
+        "Y__m_": 0,
+        "SOUS_PREF_": null,
+        "X__m1": 0,
+        "Y__m1": 0,
+        "Shape_Leng": 1449.23150412,
+        "Shape_Area": 92632.1435546
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.622929513315165,
+              6.805600383453815
+            ],
+            [
+              -4.622720758822527,
+              6.805332060918965
+            ],
+            [
+              -4.623898391271169,
+              6.801899243338529
+            ],
+            [
+              -4.627200518845072,
+              6.802038371956119
+            ],
+            [
+              -4.627357746803555,
+              6.80232070063308
+            ],
+            [
+              -4.622929513315165,
+              6.805600383453815
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

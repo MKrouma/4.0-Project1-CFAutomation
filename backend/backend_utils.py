@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import helper
+import requests
 import numpy as np
 import pandas as pd
 import geopandas as gpd
@@ -161,9 +162,19 @@ def set_mapConfig(field_temp_path, field_map_path, to_js=False, overwrite=False)
         js_path = helper.transform_geojson_to_js(map_config_file,"var map_config = ")
 
 
-
 ## 4. render static map utils
-
+# create static_image
+def static_image(url, img_name, overwrite=False, format="png"):
+    # request static image
+    if overwrite==True and not os.path.exists(img_name) :
+        r = requests.get(url)
+        # f = open('%s.png' % image_name,'wb')
+        f = open('{}.{}'.format(img_name, format),'wb')
+        f.write(r.content)
+        f.close()
+        print(f"{img_name} created !")
+    else :
+        print(f"{img_name} exists !")
 
 
 ## 5. render html utils

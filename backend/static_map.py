@@ -1,131 +1,103 @@
 import os
+import json
 import geojson
 import requests
-from helper import simplifyGeojson, read_geojson
+import helper
+from configuration import PROJECT_PATH
+from backend_utils import static_image
 
-# simplify-gejson
-simplifyGeojson(parameter=0.001, type="data", overwrite=False)
-simplifyGeojson(parameter=0.01, type="bounds", overwrite=False)
+# Data_path and geodata directory
+DATA_PATH = os.path.join(PROJECT_PATH, "database/data")
+geodata_dirs = os.listdir(DATA_PATH)
 
-# dataset
-data_gj = read_geojson("./../database/data/temp/field_data_repaired.geojson")
-bounds_gj = read_geojson("./../database/data/temp/field_bounds.geojson")
-# bounds_gj = read_geojson("./../database/data/temp/field_bounds_repaired.geojson")
+# remove ".DS_strore" 
+if ".DS_Store" in geodata_dirs :
+    geodata_dirs.remove(".DS_Store")
 
-# stylying overlay
-# gj["properties"] = {}
-# gj["properties"]["fill"] = "#555555"
-# gj["properties"]["fill-opacity"] = 0.6
-# gj["features"][0]["properties"] = {}
-# gj["features"][0]["properties"]["stroke"] = "FFFAFA"
-# gj["features"][0]["properties"]["stroke-opacity"] = 1.0
-# gj["features"][0]["properties"]["stroke-width"] = 5.0
-# gj["features"][0]["properties"]["fill"] = "#7e7e7e"
-# gj["features"][0]["properties"]["fill-opacity"] = 0.9
-# gj["features"][0]["style"] = {}
-# gj["features"][0]["style"]["fill"] = "red"
-# gj["features"][0]["style"]["fill-opacity"] = 0.9
+geodata_dirs = ["totokro", "polygo_bohoussou_kouame_celestin"]
+print(geodata_dirs)
 
-# data_map
-data_map = {"data_geojson": data_gj,
-            "bounds_geojson": bounds_gj,
-            "lat": 6.755331569175543, 
-            "lon": -4.530004939961217, 
-            "zoom": 15.5, 
-            "size_w" : 700,
-            "size_h": 700,
-            "key":"AIzaSyCdnVX6p6LQ9v5NhwL-wJtijkCsmKw4_rU",
-            "key_mapbox":"pk.eyJ1IjoibWFoYWRvdSIsImEiOiJja3RwcmVqemIwM3dyMzFrZ2syNzJkZmNpIn0.jbkeDS5DWkOiJxqo8K87cA"
-}
+for geodata_dir in geodata_dirs : 
+    geodata_abs_dir = os.path.join(DATA_PATH, geodata_dir)
+    list_dir = os.listdir(geodata_abs_dir)
 
-# data_overview
-data_overview = {"data_geojson": data_gj,
-                "bounds_geojson": bounds_gj,
-                "lat": 6.755331569175543, 
-                "lon": -4.530004939961217, 
-                "zoom": 12, 
-                "size_w" : 300,
-                "size_h": 200,
-                "key":"AIzaSyCdnVX6p6LQ9v5NhwL-wJtijkCsmKw4_rU",
-                "key_mapbox":"pk.eyJ1IjoibWFoYWRvdSIsImEiOiJja3RwcmVqemIwM3dyMzFrZ2syNzJkZmNpIn0.jbkeDS5DWkOiJxqo8K87cA"
-}
+    # remove ".DS_strore" 
+    if ".DS_Store" in list_dir :
+        list_dir.remove(".DS_Store")
+    number_fields = len(list_dir)
 
-# get url for provider
-provider =  "mapbox" #"mapbox" #"gmap"
+    # print
+    print("\n")
+    print(f"number of fields : {number_fields}")
+    print(f"existing sub-directories : {list_dir}")
 
-def create_url(provider, data_map, data_overview):
-    # provider temp URL
-    GMAP_URL = "https://maps.googleapis.com/maps/api/staticmap?center={},{}&zoom={}&size={}x{}&maptype=satellite&key={}"
-    MAPBOX_URL = "https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/geojson({})/{},{},{},0/{}x{}?access_token={}"
-    MAPBOX_URL2 = "https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/static/geojson({})/{},{},{},0/{}x{}?access_token={}"
+    # get field raw & temp
+    for idx in range(number_fields) : 
+        raw, temp, map_p, deliv = helper.get_field_dir(DATA_PATH, geodata_dir, idx)
 
-    # url map & overview
-    url_map = None
-    url_overview = None
+        # read map_config
+        map_config_file = os.path.join(map_p, "map_config.json")
+        map_config = helper.read_json(map_config_file)
 
-    # create curl for google map
-    if provider == "gmap" :
-        url_map = GMAP_URL.format(data_map["lat"], 
-                                data_map["lon"], 
-                                data_map["zoom"], 
-                                data_map["size_w"],
-                                data_map["size_h"],
-                                data_map["key"])  
-        
-        # overview
-        url_overview = GMAP_URL.format(data_overview["lat"], 
-                                    data_overview["lon"], 
-                                    data_overview["zoom"], 
-                                    data_overview["size_w"],
-                                    data_overview["size_h"],
-                                    data_overview["key"]) 
+        # simplify-gejson
+        helper.simplifyGeojson(temp, parameter=[0.001,0.01], overwrite=False)
 
-    # create curl for mapbox
-    if provider == "mapbox" :
-        # map 
-        url_map = MAPBOX_URL.format(data_map["data_geojson"],
-                                data_map["lon"], 
-                                data_map["lat"], 
-                                data_map["zoom"], 
-                                data_map["size_w"],
-                                data_map["size_h"],
-                                data_map["key_mapbox"]) 
-        
-        # overview
-        url_overview = MAPBOX_URL2.format(data_overview["data_geojson"],
-                                        data_overview["lon"], 
-                                        data_overview["lat"], 
-                                        data_overview["zoom"], 
-                                        data_overview["size_w"],
-                                        data_overview["size_h"],
-                                        data_overview["key_mapbox"]) 
+        # dataset
+        data_gj = helper.read_geojson(os.path.join(temp, "field_data.geojson"))
+        bounds_gj = helper.read_geojson(os.path.join(temp, "field_bounds.geojson"))
+        # data_gj = helper.read_geojson(os.path.join(temp, "field_data_repaired.geojson"))
+        # bounds_gj = read_geojson("./../database/data/temp/field_bounds_repaired.geojson")
 
-        # map overview
+        # stylying overlay
+        # gj["properties"] = {}
+        # gj["properties"]["fill"] = "#555555"
+        # gj["properties"]["fill-opacity"] = 0.6
+        # gj["features"][0]["properties"] = {}
+        # gj["features"][0]["properties"]["stroke"] = "FFFAFA"
+        # gj["features"][0]["properties"]["stroke-opacity"] = 1.0
+        # gj["features"][0]["properties"]["stroke-width"] = 5.0
+        # gj["features"][0]["properties"]["fill"] = "#7e7e7e"
+        # gj["features"][0]["properties"]["fill-opacity"] = 0.9
+        # gj["features"][0]["style"] = {}
+        # gj["features"][0]["style"]["fill"] = "red"
+        # gj["features"][0]["style"]["fill-opacity"] = 0.9
 
+        # data_map
+        data_map = {"data_geojson": data_gj,
+                    "bounds_geojson": bounds_gj,
+                    "lat": map_config["center"]["lat"], 
+                    "lon": map_config["center"]["lon"], 
+                    "zoom": 15.5, 
+                    "size_w" : 700,
+                    "size_h": 700,
+                    "key":"AIzaSyCdnVX6p6LQ9v5NhwL-wJtijkCsmKw4_rU",
+                    "key_mapbox":"pk.eyJ1IjoibWFoYWRvdSIsImEiOiJja3RwcmVqemIwM3dyMzFrZ2syNzJkZmNpIn0.jbkeDS5DWkOiJxqo8K87cA"
+        }
 
-    if provider not in ["gmap", "mapbox"] :
-        print("Enter a proper provider name")
-    return url_map, url_overview
+        # data_overview
+        data_overview = {"data_geojson": data_gj,
+                        "bounds_geojson": bounds_gj,
+                        "lat": map_config["center"]["lat"], 
+                        "lon": map_config["center"]["lon"], 
+                        "zoom": 12, 
+                        "size_w" : 300,
+                        "size_h": 200,
+                        "key":"AIzaSyCdnVX6p6LQ9v5NhwL-wJtijkCsmKw4_rU",
+                        "key_mapbox":"pk.eyJ1IjoibWFoYWRvdSIsImEiOiJja3RwcmVqemIwM3dyMzFrZ2syNzJkZmNpIn0.jbkeDS5DWkOiJxqo8K87cA"
+        }
 
-url_map, url_overview = create_url(provider, data_map, data_overview) 
+        # get url for provider
+        provider =  "mapbox" #"mapbox" #"gmap"
 
-# create static_image
-def static_image(url, img_name, overwrite=False, format="png"):
-    # request static image
-    if overwrite==True and not os.path.exists(img_name) :
-        r = requests.get(url)
-        # f = open('%s.png' % image_name,'wb')
-        f = open('{}.{}'.format(img_name, format),'wb')
-        f.write(r.content)
-        f.close()
-        print(f"{img_name} created !")
-    else :
-        print(f"{img_name} exists !")
+        # get map & overview url
+        url_map, url_overview = helper.create_url(provider, data_map, data_overview) 
 
-# # function save 
-map_img = f"./../database/data/map/map_{provider}" 
-overview_img = f"./../database/data/map/overview_{provider}"
+        # # function save 
+        map_img = os.path.join(map_p, f"map_{provider}") 
+        overview_img = os.path.join(map_p, f"overview_{provider}")
 
-# static image for map & overview
-static_image(url_map, map_img, True)
-static_image(url_overview, overview_img, True)
+        # static image for map & overview
+        static_image(url_map, map_img, True)
+        static_image(url_overview, overview_img, True)
+
+        break
