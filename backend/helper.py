@@ -135,4 +135,16 @@ def read_geojson(file) :
         gj = geojson.load(f)
     return gj
 
+# makedir func
+def mkdir(dir_path, dir_name) :
+    # dir abs path
+    dir = os.path.join(dir_path, dir_name)
+
+    if not os.path.exists(dir) :
+        os.makedirs(dir)
+        print(f"{dir} created !")
+    else : 
+        print(f"{dir} exists !")
+
+    return dir
 

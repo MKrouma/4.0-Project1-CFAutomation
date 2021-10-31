@@ -51,7 +51,7 @@ data_overview = {"data_geojson": data_gj,
 }
 
 # get url for provider
-provider =  "gmap" #"mapbox" #"gmap"
+provider =  "mapbox" #"mapbox" #"gmap"
 
 def create_url(provider, data_map, data_overview):
     # provider temp URL
