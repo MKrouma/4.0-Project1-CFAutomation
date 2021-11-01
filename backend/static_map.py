@@ -97,7 +97,5 @@ for geodata_dir in geodata_dirs :
         overview_img = os.path.join(map_p, f"overview_{provider}")
 
         # static image for map & overview
-        static_image(url_map, map_img, True)
-        static_image(url_overview, overview_img, True)
-
-        break
+        static_image(url_map, map_img, False)
+        static_image(url_overview, overview_img, False)
