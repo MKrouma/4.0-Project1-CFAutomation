@@ -73,12 +73,26 @@ def dirGeoData(data_shp, extern_path, data_path, uuid_file) :
     else : 
         print(f"{geodata_name} existed !")
 
+    # create new raw data with uuid
+    uuid_df = pd.DataFrame(uuid_json["database"][geodata_name]["fields"]).transpose().reset_index()
+
+    # affected uuid 
+    geodata_gpd = gpd.read_file(geodata_file)
+    geodata_gpd["uuid"] = uuid_df["uuid"].values
+
+    # copy raw data
+    for uuid in uuid_df["uuid"].values : 
+
+        # uuid raw dir
+        uuid_raw_dir = os.path.join(os.path.join(PROJECT_PATH, "database/data"), geodata_name)
+        uuid_raw_dir = os.path.join(os.path.join(uuid_raw_dir, uuid), "raw")
+        geodata_gpd.to_file(os.path.join(uuid_raw_dir, geodata_name + ".shp"))
         
 
 
 ## 2. create boundaries utils
 # create_bounds_func
-def create_bounds(field_raw_path, field_temp_path, field_idx, to_js=False, overwrite=False) :
+def create_bounds(field_raw_path, field_temp_path, uuid, to_js=False, overwrite=False) :
     # geodata file
     geodata_file = [file for file in os.listdir(field_raw_path) if file[-4:]==".shp"]
     geodata_file = geodata_file[0].replace("_bounds","")
@@ -88,8 +102,10 @@ def create_bounds(field_raw_path, field_temp_path, field_idx, to_js=False, overw
     data = gpd.read_file(field_data)
 
     # get poly bounds
-    poly_index = field_idx
-    poly_shapely = data["geometry"].values[poly_index]
+    data_uuid = data[data["uuid"] == uuid]
+    poly_index = data_uuid.index[0]
+
+    poly_shapely = data_uuid.loc[poly_index,"geometry"]
     poly_boundaries = list(np.asarray(poly_shapely.exterior.coords)[:-1])
     poly_boundaries = [list(line) for line in poly_boundaries]
 
@@ -105,7 +121,7 @@ def create_bounds(field_raw_path, field_temp_path, field_idx, to_js=False, overw
     df["Y"] = Y
 
     # objectID
-    df["OBJECTID"] = data.loc[poly_index, "OBJECTID"]
+    df["OBJECTID"] = data_uuid["OBJECTID"]
 
     # transform to geodataframe
     gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df.X, df.Y))
@@ -142,7 +158,7 @@ def create_bounds(field_raw_path, field_temp_path, field_idx, to_js=False, overw
         print(f"{bounds_file} created !")
 
     # save original data as geojson
-    data_geojson = data.loc[[field_idx]].to_crs("epsg:4326")
+    data_geojson = data.loc[[poly_index]].to_crs("epsg:4326")
     data_file = "field_data.geojson"
     data_file = os.path.join(field_temp_path, data_file)
 

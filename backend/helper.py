@@ -150,11 +150,11 @@ def mkdir(dir_path, dir_name) :
 
 # utils function
 # get field raw and temp path
-def get_field_dir(data_path, geodata_dir, idx) :
-    field_raw_path = os.path.join(os.path.join(data_path, geodata_dir), f"field_{idx+1}/raw")
-    field_temp_path = os.path.join(os.path.join(data_path, geodata_dir), f"field_{idx+1}/temp")
-    field_map_path = os.path.join(os.path.join(data_path, geodata_dir), f"field_{idx+1}/map")
-    field_deliv_path = os.path.join(os.path.join(data_path, geodata_dir), f"field_{idx+1}/deliv")
+def get_field_dir(data_path, geodata_dir, uuid) :
+    field_raw_path = os.path.join(os.path.join(data_path, geodata_dir), uuid + "/raw")
+    field_temp_path = os.path.join(os.path.join(data_path, geodata_dir), uuid + "/temp")
+    field_map_path = os.path.join(os.path.join(data_path, geodata_dir), uuid + "/map")
+    field_deliv_path = os.path.join(os.path.join(data_path, geodata_dir), uuid + "/deliv")
 
     return field_raw_path, field_temp_path, field_map_path, field_deliv_path
 
@@ -221,23 +221,10 @@ def generate_uuid(uuid_file) :
     # generate uuid
     uuid_generated = str(uuid.uuid4())
 
-    # # empty dict
-    # uuid_json["database"][uuid_generated] = {}
-
-    # # upgrade uuid_json
-    # uuid_json["database"][uuid_generated]["id"] = name
-    # uuid_json["database"][uuid_generated]["parent"] = feature_key
-
-    # # write in uuid
-    # save_json(uuid_file, uuid_json)
-
-    # # log
-    # print(f"{name} created !")
-    
-    # else :
-    #     uuid_generated = uuid_json["database"][name]["id"]
-    #     print(f"{name} exists !")
-
-    # # print
-    # print(uuid_json)
     return uuid_generated
+
+# remove ".DS_strore" 
+def remove_ds_store(dir) :
+    if ".DS_Store" in dir :
+        dir.remove(".DS_Store")
+    return dir
