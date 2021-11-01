@@ -1,10 +1,12 @@
 # map automation modules helper
 # import
 import os
+import uuid
 import json
 import geojson
 import pandas as pd
 import geopandas as gpd
+from configuration import PROJECT_PATH
 from shapely.geometry import Polygon, MultiPolygon, Point, GeometryCollection, LineString
 
 # fill boundaries in dataframe
@@ -127,6 +129,12 @@ def read_json(file) :
         data = json.load(f)
     return data
 
+# save json
+def save_json(file, data) :
+    with open(file, 'w') as fp:
+        json.dump(data, fp)
+    
+
 # makedir func
 def mkdir(dir_path, dir_name) :
     # dir abs path
@@ -202,3 +210,34 @@ def create_url(provider, data_map, data_overview):
         print("Enter a proper provider name")
         
     return url_map, url_overview
+
+
+# generate uuid func
+def generate_uuid(uuid_file) :
+        
+    # read uuid_json
+    uuid_json = read_json(uuid_file)
+
+    # generate uuid
+    uuid_generated = str(uuid.uuid4())
+
+    # # empty dict
+    # uuid_json["database"][uuid_generated] = {}
+
+    # # upgrade uuid_json
+    # uuid_json["database"][uuid_generated]["id"] = name
+    # uuid_json["database"][uuid_generated]["parent"] = feature_key
+
+    # # write in uuid
+    # save_json(uuid_file, uuid_json)
+
+    # # log
+    # print(f"{name} created !")
+    
+    # else :
+    #     uuid_generated = uuid_json["database"][name]["id"]
+    #     print(f"{name} exists !")
+
+    # # print
+    # print(uuid_json)
+    return uuid_generated

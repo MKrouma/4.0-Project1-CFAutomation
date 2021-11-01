@@ -9,34 +9,71 @@ import geopandas as gpd
 from configuration import PROJECT_PATH
 
 ## 1. create directories utils
-def dirGeoData(data_name, extern_path, data_path) :
+def dirGeoData(data_shp, extern_path, data_path, uuid_file) :
+    # UUID_json 
+    uuid_json = helper.read_json(uuid_file)
+
     # organize directory for each geodata
-    GEODATA_FILE = os.path.join(extern_path, data_name)
-    print(GEODATA_FILE)
+    geodata_file = os.path.join(extern_path, data_shp)
 
-    # create geodata directory
-    geodata_name = os.path.split(GEODATA_FILE)[-1].replace(" ", "_").replace(".shp", "").lower()
-    print(geodata_name)
+    # MAKE PARENT DIRECTORY
+    # geodata name
+    geodata_name = data_shp.replace(".shp", "").lower()
 
-    # create geodata directory
-    geodata_dir = helper.mkdir(data_path, geodata_name)
+    # create geodata dir & generate uuid
+    if geodata_name not in uuid_json["database"].keys() :
+        uuid_gen = helper.generate_uuid(uuid_file)
 
-    # create fields directories
-    geodata_gpd = gpd.read_file(GEODATA_FILE)
-    number_fields = geodata_gpd.shape[0]
+        # create geodata directory
+        geodata_dir = helper.mkdir(data_path, geodata_name)
 
-    for idx in range(number_fields) :
-        # create field 
-        field_idx_dir = helper.mkdir(geodata_dir, f"field_{idx+1}")
+        # fill uuid_json
+        uuid_json["database"][geodata_name] = {}
+        uuid_json["database"][geodata_name]["uuid"] = uuid_gen
+        uuid_json["database"][geodata_name]["fields"] = {}
 
-        # create map, raw, temp subdirectories
-        _ = helper.mkdir(field_idx_dir, "map")
-        _ = helper.mkdir(field_idx_dir, "temp")
-        _ = helper.mkdir(field_idx_dir, "deliv")
-        _ = helper.mkdir(field_idx_dir, "raw")
+        # MAKE SUB DIRECTORIES
+        # create fields directories
+        geodata_gpd = gpd.read_file(geodata_file)
+        number_fields = geodata_gpd.shape[0]
 
-        # copy raw data
-        geodata_gpd.to_file(os.path.join(_, geodata_name + ".shp"))
+        for idx in range(number_fields) :
+            # existing fields
+            geodata_fields_created = uuid_json["database"][geodata_name]["fields"].keys()
+
+            # field name
+            field_name = f"field_{idx+1}"
+
+            # generate field uuid and make directory
+            if field_name not in geodata_fields_created :
+                uuid_gen = helper.generate_uuid(uuid_file)
+
+                # create field 
+                field_uuid_dir = helper.mkdir(geodata_dir, uuid_gen)
+
+                # create map, raw, temp subdirectories
+                _ = helper.mkdir(field_uuid_dir, "map")
+                _ = helper.mkdir(field_uuid_dir, "temp")
+                _ = helper.mkdir(field_uuid_dir, "deliv")
+                _ = helper.mkdir(field_uuid_dir, "raw")
+
+                # copy raw data
+                geodata_gpd.to_file(os.path.join(_, geodata_name + ".shp"))
+
+                # fill json
+                uuid_json["database"][geodata_name]["fields"][field_name] = {}
+                uuid_json["database"][geodata_name]["fields"][field_name]["uuid"] = uuid_gen
+                uuid_json["database"][geodata_name]["fields"][field_name]["parent"] = geodata_name
+
+                print(f"{field_uuid_dir} created !")
+
+        # write uuid_json
+        helper.save_json(uuid_file, uuid_json)
+
+    else : 
+        print(f"{geodata_name} existed !")
+
+        
 
 
 ## 2. create boundaries utils

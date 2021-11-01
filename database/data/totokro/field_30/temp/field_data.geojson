@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "OBJECTID": 109, "id": 24566, "Superficie": 1.13369, "VILLAGE": "TOTOKRO", "NOM": "KOUAKOU KONAN MARTIN", "SOUS_PREF": "DJANGOKRO", "DEPARTEMEN": "DIMBOKRO", "REGION": "N'ZI", "V_NORD": "KOUAKOU KONAN MARTIN \/KRAMO KOUAME", "V_SUD": "M'BRA AYA", "V_EST": "KRAMO KOUAME", "V_OUEST": null, "CROQUIS": null, "PROJET": null, "OTA": null, "X__m_": 0.0, "Y__m_": 0.0, "SOUS_PREF_": null, "X__m1": 0.0, "Y__m1": 0.0, "Shape_Leng": 527.38369513700002, "Shape_Area": 11336.890811 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -4.624424073817041, 6.805683846063156 ], [ -4.624835576980248, 6.805156798960391 ], [ -4.624961672840006, 6.804973602385863 ], [ -4.625240441468986, 6.804153258949921 ], [ -4.626021823713894, 6.804446231291028 ], [ -4.626028684307663, 6.804716071826419 ], [ -4.625511178085379, 6.805073578590652 ], [ -4.624991300959603, 6.805522575695801 ], [ -4.624512087638732, 6.805638130024978 ], [ -4.624424073817041, 6.805683846063156 ] ] ] } }
-]
-}

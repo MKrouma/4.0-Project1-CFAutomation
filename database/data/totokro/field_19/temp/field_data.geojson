@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "OBJECTID": 60, "id": 24613, "Superficie": 0.08418, "VILLAGE": "TOTOKRO", "NOM": "KOUAKOU YAO", "SOUS_PREF": "DJANGOKRO", "DEPARTEMEN": "DIMBOKRO", "REGION": "N'ZI", "V_NORD": "N'GUESSAN KOFFI", "V_SUD": "KOFFI KOUASSI", "V_EST": "DIBY KOFFI", "V_OUEST": null, "CROQUIS": null, "PROJET": null, "OTA": null, "X__m_": 0.0, "Y__m_": 0.0, "SOUS_PREF_": null, "X__m1": 0.0, "Y__m1": 0.0, "Shape_Leng": 126.12560595, "Shape_Area": 841.78433949199996 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -4.617045002338789, 6.808673219115426 ], [ -4.617045002338789, 6.808673219115426 ], [ -4.617250158650517, 6.80830490946578 ], [ -4.617367013431586, 6.808580342211698 ], [ -4.61732200027498, 6.808713553367999 ], [ -4.617045002338789, 6.808673219115426 ] ] ] } }
-]
-}
