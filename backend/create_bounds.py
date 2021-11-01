@@ -38,4 +38,4 @@ for geodata_dir in geodata_dirs :
         raw, temp, map_p, deliv = helper.get_field_dir(DATA_PATH, geodata_dir, idx)
 
         # create bounds 
-        create_bounds(raw, temp, idx, to_js=False, overwrite=True)
+        create_bounds(raw, temp, idx, to_js=False, overwrite=False)

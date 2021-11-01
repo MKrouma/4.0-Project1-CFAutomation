@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="../frontend/statics/css/report.css">
+    <title>CF - Automation</title>
+
+    <style type="text/css" media="print">
+        @page { 
+            size: landscape;
+        }
+        body { 
+            writing-mode: tb-rl;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+    <!-- PROGRAMME -->
+        <div class="nav">
+            <div class="armoirie">
+                <div id="amoirie-img-var">
+                    <img src="../frontend/statics/img/armoirie_CI.png" alt="armoirie">
+                </div>
+                <div class="nav-armoirie">
+                    <div>
+                        <h5>REPUBLIQUE DE COTE D'IVOIRE</h5> <h5>Ministere de l'administration du territoire et de la decentralisation</h5>
+                        <h5>Ministere de l'economie et des finances</h5>
+                        <h5>Ministere de l'agriculture et du developpement durable</h5>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="programe">
+                <h5>PROGRAMME NATIONAL DE SECURISATION DU FONCIER RURAL</h5>
+                <h5>Operation de certificat foncier</h5>
+                <h3>Carte de certificat foncier numero <span>6</span></h3>
+            </div>
+            <div class="logo">
+                <img src="../frontend/statics/img/afor-removebg.png" alt="afor">
+            </div>
+        </div>
+
+
+        <!-- BODY -->
+        <div class="body">
+        
+            <!-- PLAN & GENERAL INFOS -->
+            <div class="left">
+                <div class="iterm">
+                    <h4>Plan de situation</h4>
+                    <div class="cadre">
+                        <div class="center2">
+                            <img src=/Users/mac/Documents/PROJET/4.0-Project1-CFAutomation/database/data/totokro/field_26/map/overview_mapbox.png alt="tec">
+                        </div>
+                    </div>
+                    <div class="iterm-info">
+                        <div class="iterm-info-1">
+                            <p>Village</p>
+                            <p>Parcelle Objet du CF</p>
+                            <p>Route</p>
+
+                        </div>
+                        <div class="iterm-info-2">
+                            <p>Chemin de fer (BNETD)</p>
+                            <p>Cours d'eau (BNETD)</p>
+                            <p>Foret classe (SODEFOR)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="iterm">
+                    <h4>Informations generales</h4>
+                    <div class="iterm-p">
+                        <div class="info-generale-programme">
+                            <p>Programma national de securisation fonciere</p>
+                            <p>Operation de certification fonciere</p>
+                        </div>
+                        <div class="informations-generales">
+                            <div>
+                                <p>
+                                    Nom du programme : 
+                                    <span>PAMOFOR</span>
+                                </p>
+                                <p>
+                                    Nom de la region : 
+                                    <span>N'ZI</span>
+                                </p>
+                                <p>
+                                    Nom du departement : 
+                                    <span>DIMBOKRO</span>
+                                </p>
+                                <p>
+                                    Nom de la sous-prefecture : 
+                                    <span>DJANGOKRO</span>
+                                </p>
+                                <p>
+                                    Nom du village : 
+                                    <span>TOTOKRO</span>
+                                </p>
+                                <p>
+                                    N° Dossier de demande : 
+                                    <span>None</span>
+                                </p>
+                                <p>
+                                    Nom du demandeur : 
+                                    <span>AKPOUE KOUAKOU</span>
+                                </p>
+                                <p>
+                                    N° de CF : 
+                                    <span>None</span>
+                                </p>
+                                <p>
+                                    N° IDUFCI : 
+                                    <span>None</span>
+                                </p>
+                                <p>
+                                    N° TF : 
+                                    <span>None</span>
+                                </p>
+                                <p>
+                                    Date etablissement de carte : 
+                                    <span>30/09/2021</span>
+                                </p>
+                                <p>
+                                    Date edition de carte : 
+                                    <span>30/09/2021</span>
+                                </p>
+                            </div>
+                            
+                        </div>
+                        <div class="info-generale-operateur">
+                            <div class="left-item-operateur">
+                                <p>Operateur Foncier :
+                                    <span> Terrabo - Etafat - CGEDS<strong></strong></span>
+                                </p>
+                            </div>
+                            <div class="g-tec-image">
+                                <img src="../frontend/statics/img/g-tec.png" alt="tec">
+                            </div>
+
+                            <div class="left-item2-logo">
+                                <div>
+                                    <p>DIALLO SEKOU</p>
+                                    <p>GEOMETRE EXPERT AGREE</p>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- MAP -->
+            <div id="map" class="center">
+                <img src=/Users/mac/Documents/PROJET/4.0-Project1-CFAutomation/database/data/totokro/field_26/map/map_mapbox.png alt="tec">
+            </div>
+
+
+
+            <!-- BOUNDS TABLE -->
+            <div class="right">
+                <div class="iterm--1--right">
+                    <div>
+                        <h5>TABLEAU DES COORDONNEES METRIQUES DES BORNES</h5>
+                        <h5>ELLIPSOIDE WGS84 FUSEAU 30</h5>
+                        <h5>PROJECTION DE MERCATOR TRANSVERSE UNIVERSELLE (UTM)</h5>
+                    </div>
+                    
+                </div>
+                <div class="iterm--2--right">
+                    <table>
+                        <tr>
+                            <th>Bornes</th>
+                            <th>X(m)</th>
+                            <th>Y(m)</th>
+                            <th>Distance(m)</th>
+                        </tr>
+
+                        
+                            <tr>
+                                <td>B1</td>
+                                <td>322228.35</td>
+                                <td>752378.0</td>
+                                <td></td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B2</td>
+                                <td>322163.63</td>
+                                <td>752385.46</td>
+                                <td>65.149</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B3</td>
+                                <td>322166.06</td>
+                                <td>752408.47</td>
+                                <td>23.137</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B4</td>
+                                <td>322172.4</td>
+                                <td>752458.93</td>
+                                <td>50.856</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B5</td>
+                                <td>322193.3</td>
+                                <td>752542.49</td>
+                                <td>86.141</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B6</td>
+                                <td>322177.23</td>
+                                <td>752624.18</td>
+                                <td>83.252</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B7</td>
+                                <td>322170.62</td>
+                                <td>752664.86</td>
+                                <td>41.209</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B8</td>
+                                <td>322166.22</td>
+                                <td>752707.97</td>
+                                <td>43.343</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B9</td>
+                                <td>322169.4</td>
+                                <td>752817.01</td>
+                                <td>109.084</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B10</td>
+                                <td>322163.78</td>
+                                <td>752846.98</td>
+                                <td>30.491</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B11</td>
+                                <td>322249.72</td>
+                                <td>752953.27</td>
+                                <td>136.685</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B12</td>
+                                <td>322204.45</td>
+                                <td>753018.13</td>
+                                <td>79.099</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B13</td>
+                                <td>322160.49</td>
+                                <td>753029.76</td>
+                                <td>45.477</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B14</td>
+                                <td>322222.75</td>
+                                <td>753108.52</td>
+                                <td>100.402</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B15</td>
+                                <td>322282.63</td>
+                                <td>753092.41</td>
+                                <td>62.004</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B16</td>
+                                <td>322341.66</td>
+                                <td>753159.35</td>
+                                <td>89.249</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B17</td>
+                                <td>322379.5</td>
+                                <td>753165.15</td>
+                                <td>38.275</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B18</td>
+                                <td>322447.11</td>
+                                <td>753086.54</td>
+                                <td>103.683</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B19</td>
+                                <td>322428.19</td>
+                                <td>753007.61</td>
+                                <td>81.163</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B20</td>
+                                <td>322415.4</td>
+                                <td>753008.67</td>
+                                <td>12.841</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B21</td>
+                                <td>322378.25</td>
+                                <td>752972.41</td>
+                                <td>51.912</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B22</td>
+                                <td>322322.16</td>
+                                <td>752903.69</td>
+                                <td>88.704</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B23</td>
+                                <td>322342.0</td>
+                                <td>752882.38</td>
+                                <td>29.119</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B24</td>
+                                <td>322313.51</td>
+                                <td>752815.62</td>
+                                <td>72.584</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B25</td>
+                                <td>322264.92</td>
+                                <td>752760.16</td>
+                                <td>73.732</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B26</td>
+                                <td>322260.35</td>
+                                <td>752702.92</td>
+                                <td>57.418</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B27</td>
+                                <td>322245.14</td>
+                                <td>752576.74</td>
+                                <td>127.101</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B28</td>
+                                <td>322262.34</td>
+                                <td>752485.55</td>
+                                <td>92.79</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>B29</td>
+                                <td>322234.75</td>
+                                <td>752445.35</td>
+                                <td>48.755</td>
+                            </tr>
+                        
+                    </table>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="./../../database/data/temp/field_data.js"></script> 
+    <script src="./../../database/data/temp/field_bounds.js"></script> 
+    <script type="text/javascript" src="./../../database/data/map/map_config.js"></script>
+</body>
+</html>
