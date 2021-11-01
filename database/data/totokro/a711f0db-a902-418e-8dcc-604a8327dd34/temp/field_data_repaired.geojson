@@ -1,0 +1,62 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "OBJECTID": 5,
+        "id": 5575,
+        "Superficie": 1.72107,
+        "VILLAGE": "TOTOKRO",
+        "NOM": "ALLIALI KOUAKOU ETIENNE",
+        "SOUS_PREF": "DJANGOKRO",
+        "DEPARTEMEN": "DIMBOKRO",
+        "REGION": null,
+        "V_NORD": null,
+        "V_SUD": null,
+        "V_EST": null,
+        "V_OUEST": null,
+        "CROQUIS": null,
+        "PROJET": null,
+        "OTA": null,
+        "X__m_": 0,
+        "Y__m_": 0,
+        "SOUS_PREF_": null,
+        "X__m1": 0,
+        "Y__m1": 0,
+        "Shape_Leng": 551.456873007,
+        "Shape_Area": 17210.4330541,
+        "uuid": "a711f0db-a902-418e-8dcc-604a8327dd34"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.611728873388079,
+              6.808239407883204
+            ],
+            [
+              -4.612369147452874,
+              6.807024786629207
+            ],
+            [
+              -4.613229570087375,
+              6.806834989324194
+            ],
+            [
+              -4.611728873388079,
+              6.808239407883204
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
