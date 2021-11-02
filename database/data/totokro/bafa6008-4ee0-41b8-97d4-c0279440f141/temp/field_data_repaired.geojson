@@ -1,0 +1,70 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "OBJECTID": 92,
+        "id": 1,
+        "Superficie": 9.10223,
+        "VILLAGE": "TOTOKRO",
+        "NOM": "OUSSOU KOUAKOU ERNEST",
+        "SOUS_PREF": "DJANGOKRO",
+        "DEPARTEMEN": "DIMBOKRO",
+        "REGION": "N'ZI",
+        "V_NORD": "KONAN KOUME L / NANAN KONAN / MOH GNANDJIA",
+        "V_SUD": "ALLALI KOUAKOU / M'BRA KOUAKOU",
+        "V_EST": "DIBI KOFFI E / KOFFI KOUASSI / DIBY KOFFI",
+        "V_OUEST": "KOFFI KOUAKOU / N'GUESSAN YAO / KONAN KOUAME L",
+        "CROQUIS": null,
+        "PROJET": null,
+        "OTA": null,
+        "X__m_": 0,
+        "Y__m_": 0,
+        "SOUS_PREF_": null,
+        "X__m1": 0,
+        "Y__m1": 0,
+        "Shape_Leng": 1991.31351317,
+        "Shape_Area": 91020.6181842,
+        "uuid": "bafa6008-4ee0-41b8-97d4-c0279440f141"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.608637753462478,
+              6.804004046276424
+            ],
+            [
+              -4.608873251412266,
+              6.809791660365933
+            ],
+            [
+              -4.60927132583228,
+              6.809895536011828
+            ],
+            [
+              -4.607294117833842,
+              6.811126341840613
+            ],
+            [
+              -4.606680074710464,
+              6.810417602844602
+            ],
+            [
+              -4.608637753462478,
+              6.804004046276424
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

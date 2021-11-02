@@ -1,0 +1,54 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "OBJECTID": 7,
+        "id": 17196,
+        "Superficie": 0.20091,
+        "VILLAGE": "TOTOKRO",
+        "NOM": "ALLIALI KOUAKOU ETIENNE",
+        "SOUS_PREF": "DJANGOKRO",
+        "DEPARTEMEN": "DIMBOKRO",
+        "REGION": "N'ZI",
+        "V_NORD": "DIBY KOFFI(TANO AKAKRO)",
+        "V_SUD": "KOUASSI KOUAME (TANO AKAKRO)",
+        "V_EST": "KOUASSI KOUADIO(TANO AKAKRO)",
+        "V_OUEST": "DIBY KOFFI",
+        "CROQUIS": null,
+        "PROJET": null,
+        "OTA": null,
+        "X__m_": 0,
+        "Y__m_": 0,
+        "SOUS_PREF_": null,
+        "X__m1": 0,
+        "Y__m1": 0,
+        "Shape_Leng": 181.207941315,
+        "Shape_Area": 2009.03221957,
+        "uuid": "8ba3f569-f538-450b-a87a-ee025aa3603a"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.607386003931928,
+              6.802542689576233
+            ],
+            [
+              -4.607386003931928,
+              6.802542689576233
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "OBJECTID": 110,
+        "id": 18003,
+        "Superficie": 0.71966,
+        "VILLAGE": "TOTOKRO",
+        "NOM": "KOUAKOU YAO",
+        "SOUS_PREF": "DJANGOKRO",
+        "DEPARTEMEN": "DIMBOKRO",
+        "REGION": "N'ZI",
+        "V_NORD": "KONAN KOUAME LAURENT / ALLALI KOUAKOU",
+        "V_SUD": "N'GUESSAN KOFFI",
+        "V_EST": "OUSSOU KOUAKOU",
+        "V_OUEST": "YAMIEN KOFFI DAVID",
+        "CROQUIS": null,
+        "PROJET": null,
+        "OTA": null,
+        "X__m_": 0,
+        "Y__m_": 0,
+        "SOUS_PREF_": null,
+        "X__m1": 0,
+        "Y__m1": 0,
+        "Shape_Leng": 349.266809419,
+        "Shape_Area": 7196.66209073,
+        "uuid": "9edd0d86-bbc2-4d14-9cf4-3702f1f716ff"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -4.621025546094419,
+              6.80893209820302
+            ],
+            [
+              -4.621025546094419,
+              6.80893209820302
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
