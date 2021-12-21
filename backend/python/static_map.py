@@ -12,7 +12,7 @@ from configuration import PROJECT_PATH
 # create static_image
 def static_image(url, img_name, overwrite=False, format="png"):
     # request static image
-    if overwrite==True and not os.path.exists(img_name) :
+    if not os.path.exists(img_name) or overwrite==True :
         r = requests.get(url)
         # f = open('%s.png' % image_name,'wb')
         f = open('{}.{}'.format(img_name, format),'wb')

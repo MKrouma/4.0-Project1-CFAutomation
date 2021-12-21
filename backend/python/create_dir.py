@@ -17,7 +17,7 @@ def dirGeoData(data_shp, extern_path, data_path, uuid_file) :
 
     # MAKE PARENT DIRECTORY
     # geodata name
-    geodata_name = data_shp.replace(".shp", "").lower()
+    geodata_name = data_shp.replace(" ", "_").replace(".shp", "").lower()
 
     # create geodata dir & generate uuid
     if geodata_name not in uuid_json["database"].keys() :

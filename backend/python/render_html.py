@@ -10,14 +10,13 @@ from configuration import PROJECT_PATH
 
 # Data_path and geodata directory
 DATA_PATH = os.path.join(PROJECT_PATH, "database/data")
-geodata_dirs = os.listdir(DATA_PATH)
+# read uuid
+uuid_file = os.path.join(PROJECT_PATH, "backend/uuid.json")
+uuid_json = helper.read_json(uuid_file)
 
-# remove ".DS_strore" 
-if ".DS_Store" in geodata_dirs :
-    geodata_dirs.remove(".DS_Store")
-
-geodata_dirs = ["totokro", "polygo_bohoussou_kouame_celestin"]
-print(geodata_dirs)
+# fetch geodata_names 
+geodata_names = list(uuid_json["database"].keys())
+print(geodata_names)
 
 # path 
 TEMPLATE_ABS_PATH = os.path.join(PROJECT_PATH, "frontend/templates")
@@ -25,23 +24,16 @@ DELIVERABLE_REL_PATH = os.path.join(PROJECT_PATH, "deliverable")
 sys.path.append(TEMPLATE_ABS_PATH)
 
 
-for geodata_dir in geodata_dirs : 
-    geodata_abs_dir = os.path.join(DATA_PATH, geodata_dir)
-    list_dir = os.listdir(geodata_abs_dir)
+for geodata_name in geodata_names : 
+    geodata_abs_dir = os.path.join(DATA_PATH, geodata_name)
 
-    # remove ".DS_strore" 
-    if ".DS_Store" in list_dir :
-        list_dir.remove(".DS_Store")
-    number_fields = len(list_dir)
+    # uuid df associted to geodata
+    uuid_df = pd.DataFrame(uuid_json["database"][geodata_name]["fields"]).transpose().reset_index()
+    print(uuid_df)
 
-    # print
-    print("\n")
-    print(f"number of fields : {number_fields}")
-    print(f"existing sub-directories : {list_dir}")
-
-    # get field raw & temp
-    for idx in range(number_fields) : 
-        raw, temp, map_p, deliv = helper.get_field_dir(DATA_PATH, geodata_dir, idx)
+    # create bounds
+    for uuid in uuid_df["uuid"].values : 
+        raw, temp, map_p, deliv = helper.get_field_dir(DATA_PATH, geodata_name, uuid)
         geodata_file = [file for file in os.listdir(raw) if file[-4:]==".shp"]
         geodata_file = geodata_file[0].replace("_bounds","")
 

@@ -1,5 +1,5 @@
 import os
 
 print("Running automation in docker container ...")
-cmd = "cd backend/bash && bash create_pdf_report.sh"
+cmd = "cd backend/bash && bash backend.sh"
 os.system(cmd)
