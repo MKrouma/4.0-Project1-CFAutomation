@@ -25,7 +25,7 @@ docker build -t 40team .
 
 ### run container terminal
 ```
-docker run -p 8888:80 -it -v deliverable:/deliverable 40team /bin/bash
+docker run -p 8888:80 -it -v deliverable:/workspace/deliverable 40team /bin/bash
 ```
 
 

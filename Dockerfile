@@ -20,5 +20,4 @@ RUN npm install -g simplify-geojson
 EXPOSE 80
 
 # command to run on container start
-CMD pwd
 CMD [ "python", "./automation.py" ]

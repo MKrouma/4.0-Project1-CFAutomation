@@ -6,5 +6,5 @@
 /frontend/sample/
 
 # ignore pycache
-/backend/__pycache__/
+/backend/python/__pycache__/
 
