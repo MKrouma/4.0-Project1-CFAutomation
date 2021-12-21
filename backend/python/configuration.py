@@ -1,2 +1,5 @@
-PROJECT_PATH = "/Users/mac/Desktop/4.0-Project1-CFAutomation"
-MODULE_PATH = "/Users/mac/Desktop/4.0-Project1-CFAutomation/backend/module"
+import os
+
+PROJECT_PATH = os.path.dirname(os.path.dirname(os.getcwd()))
+print(PROJECT_PATH)
+MODULE_PATH = PROJECT_PATH + "/backend/module"
