@@ -1,5 +1,6 @@
 # ignore virtual env
 /env/
+/auth
 
 # ignore sample
 /frontend/sample/
