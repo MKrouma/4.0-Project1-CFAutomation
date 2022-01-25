@@ -97,7 +97,7 @@ if __name__ == "__main__" :
     UUID_FILE = os.path.join(PROJECT_PATH, "backend/uuid.json")
 
     # geodata file in extern directory
-    LIST_GEODATA = [file for file in os.listdir(EXTERN_PATH) if file[-4:]==".shp"][0:1]
+    LIST_GEODATA = [file for file in os.listdir(EXTERN_PATH) if file[-4:]==".shp"]
     print(LIST_GEODATA)
 
     # create fild for each geodata
