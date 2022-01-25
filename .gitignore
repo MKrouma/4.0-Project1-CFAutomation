@@ -8,3 +8,13 @@
 # ignore pycache
 /backend/__pycache__/
 
+# database
+database/
+
+# pycache
+backend/python/module/__pycache__
+__pycache__/
+*/__pycache__/
+*/*/__pycache__/
+*/*/*/__pycache__/
+

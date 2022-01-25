@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "OBJECTID": 102, "id": 18000, "Superficie": 0.44042, "VILLAGE": "TOTOKRO", "NOM": "YAMIEN KOUAME DAVID", "SOUS_PREF": "DJANGOKRO", "DEPARTEMEN": "DIMBOKRO", "REGION": "N'ZI", "V_NORD": "ALLALI KOUAKOU", "V_SUD": null, "V_EST": "FORET SACREE", "V_OUEST": "KOUAKOU YAO LAZARE", "CROQUIS": null, "PROJET": null, "OTA": null, "X__m_": 0.0, "Y__m_": 0.0, "SOUS_PREF_": null, "X__m1": 0.0, "Y__m1": 0.0, "Shape_Leng": 276.19933301899999, "Shape_Area": 4404.2089449599998, "uuid": "ab29cff2-11ca-43ad-93f3-90c177223718" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -4.623506210969644, 6.797297481443753 ], [ -4.623392250943917, 6.797045957920794 ], [ -4.623297204098035, 6.796618313676691 ], [ -4.623628516414518, 6.796439825430393 ], [ -4.624105510367955, 6.796638417408412 ], [ -4.623506210969644, 6.797297481443753 ] ] ] } }
-]
-}
