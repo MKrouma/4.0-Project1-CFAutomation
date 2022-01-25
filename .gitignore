@@ -6,5 +6,11 @@
 /frontend/sample/
 
 # ignore pycache
-/backend/python/__pycache__/
+__pycache__/
+*/__pycache__/
+*/*/__pycache__/
+*/*/*/__pycache__/
+
+# database
+database/
 

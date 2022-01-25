@@ -13,7 +13,8 @@ RUN apt-get install libpangocairo-1.0-0
 
 # install nodejs, npm and simplify-geojson
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - 
-RUN apt-get install -y nodejs
+#RUN apt-get install -y nodejs
+RUN apt-get install nodejs
 RUN npm install -g simplify-geojson
 
 # Docker expose port
