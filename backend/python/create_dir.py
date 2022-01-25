@@ -102,4 +102,5 @@ if __name__ == "__main__" :
 
     # create fild for each geodata
     for data_name in LIST_GEODATA : 
+        print(f"data name : {data_name}")
         dirGeoData(data_name, EXTERN_PATH, DATA_PATH, UUID_FILE)
