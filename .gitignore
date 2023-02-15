@@ -14,3 +14,13 @@ __pycache__/
 # database
 database/
 
+# database
+database/
+
+# pycache
+backend/python/module/__pycache__
+__pycache__/
+*/__pycache__/
+*/*/__pycache__/
+*/*/*/__pycache__/
+
