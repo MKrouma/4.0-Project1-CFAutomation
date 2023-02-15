@@ -6,7 +6,7 @@ import json
 import geojson
 import pandas as pd
 import geopandas as gpd
-from configuration import PROJECT_PATH
+from settings import PROJECT_PATH
 from shapely.geometry import Polygon, MultiPolygon, Point, GeometryCollection, LineString
 
 # fill boundaries in dataframe

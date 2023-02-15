@@ -23,8 +23,9 @@ install docker, run docker daemon
 docker build -t 40team .
 ```
 
-### run container terminal
+### run container
 ```
+docker run -p 8888:80 -it -v deliverable:/workspace/deliverable 40team
 docker run -p 8888:80 -it -v deliverable:/workspace/deliverable 40team /bin/bash
 ```
 
@@ -39,15 +40,16 @@ MODULE_PATH = "/Users/mac/Desktop/4.0-Project1-CFAutomation/backend/module"
 
 ### virtual env
 ```
-python -m venv auth
-source auth/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
+pip freeze > requirements.txt
 ```
 
 ### run automation
 `In container terminal :`
 ```
-python automation.py
+python3 automation.py
 ```
 
 ### results

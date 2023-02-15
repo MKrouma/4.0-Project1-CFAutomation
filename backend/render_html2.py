@@ -5,7 +5,7 @@ import pandas as pd
 import geopandas as gpd
 
 from module import helper
-from configuration import PROJECT_PATH
+from backend.python.settings import PROJECT_PATH
 
 # local_dir
 local_dir = os.getcwd()

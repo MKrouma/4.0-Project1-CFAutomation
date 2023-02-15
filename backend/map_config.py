@@ -5,7 +5,7 @@ import pandas as pd
 import geopandas as gpd
 
 from module import helper
-from configuration import PROJECT_PATH
+from backend.python.settings import PROJECT_PATH
 
 # set map configurations functions
 def set_mapConfig(field_temp_path, field_map_path, to_js=False, overwrite=False):
@@ -49,7 +49,7 @@ def set_mapConfig(field_temp_path, field_map_path, to_js=False, overwrite=False)
 if __name__ == "__main__" :
     # map configurations
     # path 
-    DATA_PATH = os.path.join(PROJECT_PATH, "database/data")
+    DATA_PATH = os.path.join(PROJECT_PATH, "data/raw")
 
     # read uuid
     uuid_file = os.path.join(PROJECT_PATH, "backend/uuid.json")

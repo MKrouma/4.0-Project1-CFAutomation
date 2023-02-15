@@ -5,13 +5,14 @@ import pandas as pd
 import geopandas as gpd
 
 from module import helper
-from configuration import PROJECT_PATH
+from backend.python.settings import PROJECT_PATH
 
 # local_dir
 local_dir = os.getcwd()
 
 # Data_path and geodata directory
-DATA_PATH = os.path.join(PROJECT_PATH, "database/data")
+DATA_PATH = os.path.join(PROJECT_PATH, "data/raw")
+
 # read uuid
 uuid_file = os.path.join(PROJECT_PATH, "backend/uuid.json")
 uuid_json = helper.read_json(uuid_file)

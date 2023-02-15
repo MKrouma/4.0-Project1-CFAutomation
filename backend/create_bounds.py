@@ -5,7 +5,7 @@ import pandas as pd
 import geopandas as gpd
 
 from module import helper
-from configuration import PROJECT_PATH
+from backend.python.settings import PROJECT_PATH
 
 
 ## 2. create boundaries utils
@@ -94,7 +94,7 @@ def create_bounds(field_raw_path, field_temp_path, uuid, to_js=False, overwrite=
 
 if __name__ == "__main__" :
     # Data_path and geodata directory
-    DATA_PATH = os.path.join(PROJECT_PATH, "database/data")
+    DATA_PATH = os.path.join(PROJECT_PATH, "data/raw")
 
     # read uuid
     uuid_file = os.path.join(PROJECT_PATH, "backend/uuid.json")

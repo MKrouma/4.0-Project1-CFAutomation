@@ -6,7 +6,7 @@ import requests
 import numpy as np
 import pandas as pd
 import geopandas as gpd
-from configuration import PROJECT_PATH
+from backend.python.settings import PROJECT_PATH
 
 ## 1. create directories utils
 def dirGeoData(data_shp, extern_path, data_path, uuid_file) :

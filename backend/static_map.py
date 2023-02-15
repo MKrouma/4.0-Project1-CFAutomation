@@ -5,7 +5,7 @@ import requests
 import pandas as pd
 
 from module import helper
-from configuration import PROJECT_PATH
+from backend.python.settings import PROJECT_PATH
 
 
 ## 4. render static map utils

@@ -9,7 +9,6 @@ click-plugins==1.1.1
 cligj==0.7.2
 cssselect2==0.4.1
 cycler==0.10.0
-Fiona==1.8.20
 fonttools==4.27.1
 future==0.18.2
 geojson==2.5.0
@@ -30,7 +29,6 @@ pydyf==0.1.1
 pyparsing==3.0.0
 PyPDF2==1.26.0
 pyphen==0.11.0
-pyproj==3.2.1
 python-bidi==0.4.2
 python-dateutil==2.8.2
 pytz==2021.3
