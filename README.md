@@ -25,11 +25,25 @@ docker build -t 40team .
 
 ### run container terminal
 ```
-docker run -p 8888:80 -it -v deliverable:/deliverable 40team /bin/bash
+docker run -p 8888:80 -it -v deliverable:/workspace/deliverable 40team /bin/bash
 ```
 
 
 ## Development
+### configurations
+change project directory & module path
+```
+PROJECT_PATH = /Users/mac/Desktop/4.0-Project1-CFAutomation
+MODULE_PATH = "/Users/mac/Desktop/4.0-Project1-CFAutomation/backend/module"
+```
+
+### virtual env
+```
+python -m venv auth
+source auth/bin/activate
+pip install -r requirements.txt
+```
+
 ### run automation
 `In container terminal :`
 ```
@@ -101,3 +115,4 @@ soluion : http://xxxxxxx.com?xxxxx
 > render static map (*field*) \
 > render html for (*field*) \
 > trnasform html to pdf (*field*)
+

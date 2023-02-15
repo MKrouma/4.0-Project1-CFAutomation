@@ -18,5 +18,5 @@ python static_map.py
 # render html 
 python render_html.py
 
-# transform html to pdf
+# # transform html to pdf
 # weasyprint report_deliv.html report.pdf

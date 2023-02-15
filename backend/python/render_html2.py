@@ -18,13 +18,11 @@ uuid_json = helper.read_json(uuid_file)
 
 # fetch geodata_names 
 geodata_names = list(uuid_json["database"].keys())
-print(geodata_names)
 
 # path 
 TEMPLATE_ABS_PATH = os.path.join(PROJECT_PATH, "frontend/templates")
 DELIVERABLE_REL_PATH = os.path.join(PROJECT_PATH, "deliverable")
 sys.path.append(TEMPLATE_ABS_PATH)
-
 
 for geodata_name in geodata_names : 
     geodata_abs_dir = os.path.join(DATA_PATH, geodata_name)
@@ -77,12 +75,17 @@ for geodata_name in geodata_names :
         map_mapbox = os.path.join(map_p, "map_mapbox.png")
         overview_mapbox = os.path.join(map_p, "overview_mapbox.png") 
 
+        print(f"path mapbox image : {overview_mapbox}")
+
         # jinja env setting up
         search_path = TEMPLATE_ABS_PATH
         templateLoader = jinja2.FileSystemLoader(searchpath=search_path)
         templateEnv = jinja2.Environment(loader=templateLoader)
         TEMPLATE_FILE = "report.html"
         template = templateEnv.get_template(TEMPLATE_FILE)
+
+        print(f"Search path : {search_path}")
+        print(f"Local dir : {local_dir}")
 
         # change os dir
         os.chdir(search_path)
@@ -105,5 +108,6 @@ for geodata_name in geodata_names :
             report.write(outputText)
 
         # change os dir
-        os.chdir(search_path)
-        print(f"new chdir {search_path}")
+        os.chdir(local_dir)
+        print(f"new chdir {local_dir}")
+        
